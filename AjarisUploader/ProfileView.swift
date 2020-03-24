@@ -8,30 +8,62 @@
 
 import SwiftUI
 
-struct Profile: Identifiable {
-    let id: Int
-    let name:String
-}
-
 struct ProfileView: View {
-    @State private var profiles = [
-        Profile(id: 0, name: "Wangerooge"),
-        Profile(id: 1, name: "Spiekeroog"),
-        Profile(id: 2, name: "Langeoog")
-    ]
+    @State private var profiles = ProfilePreferences.getPreferences()
+    @State private var addProfileActive: Bool = false
     
     var body: some View {
         VStack {
             List {
                 ForEach(profiles, id: \.id) { profile in
-                    ProfileCards(category: profile.name, heading: "Drawing a Border with Rounded Corners", author: "Simon Ng")
-                }.onDelete(perform: delete)
+                    ProfileCards(name: profile.getName(), login: profile.getLogin())
+                }
+                .onDelete(perform: delete)
+            }
+            
+            Button(action: {
+                self.addProfileActive = true
+            }) {
+                Image(systemName: "plus")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
+                    .clipShape(Circle())
+            }
+            .padding()
+            
+            NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
+                Text("")
             }
         }
     }
     
+    init() {
+        /** For tests purpose **/
+        // TODO: Remove
+        ProfilePreferences.removeAllPreferences()
+        ProfilePreferences.addPreferences(profile: Profile(id: 0, name: "Adrien CANINO", login: "mistale", pwd: "", url: "", base: Base(), importProfile: ""))
+        ProfilePreferences.addPreferences(profile: Profile(id: 1, name: "Alexandre DO-O ALMEIDA", login: "mistale", pwd: "", url: "", base: Base(), importProfile: ""))
+        self.profiles = ProfilePreferences.getPreferences()
+        /******************/
+    }
+    
     private func delete(with indexSet: IndexSet) {
-        indexSet.forEach { profiles.remove(at: $0) }
+        // TODO: Remove pref doesn't work
+        indexSet.forEach {
+            profiles.remove(at: $0)
+            ProfilePreferences.removePreference(profile: getProfile(from: profiles, at: $0))
+        }
+    }
+    
+    private func getProfile(from: [Profile], at: Int) -> Profile {
+        for profile in from {
+            if(profile.getId() == at) {
+                return profile
+            }
+        }
+        return Profile()
     }
 }
 

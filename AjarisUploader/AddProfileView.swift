@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  AddProfileView.swift
 //  AjarisUploader
 //
 //  Created by user163559 on 3/24/20.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct AddProfileView: View {
     var body: some View {
-        Text("History")
+        Text("Add Profile")
     }
 }
 
-struct HistoryView_Previews: PreviewProvider {
+struct AddProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        AddProfileView()
     }
 }

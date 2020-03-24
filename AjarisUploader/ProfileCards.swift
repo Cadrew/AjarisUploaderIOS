@@ -9,27 +9,23 @@
 import SwiftUI
 
 struct ProfileCards: View {
-    var category: String
-    var heading: String
-    var author: String
+    var name: String
+    var login: String
     
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(category)
+                    Text(name)
                         .font(.headline)
                         .foregroundColor(.secondary)
-                    Text(heading)
-                        .font(.title)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
                         .lineLimit(3)
-                    Text(author.uppercased())
+                    Text(login)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
                 .layoutPriority(100)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .topLeading)
             }
         .padding()
         }
@@ -38,12 +34,12 @@ struct ProfileCards: View {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
         )
-        .padding([.top, .horizontal])
+        //.padding([.top, .horizontal])
     }
 }
 
 struct ProfileCards_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileCards(category: "TEST", heading: "TEST", author: "TEST")
+        ProfileCards(name: "TEST", login: "TEST")
     }
 }
