@@ -12,25 +12,34 @@ struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
-        TabView(selection: $selection){
-            Text("First View")
+        TabView {
+            ProfileView()
                 .font(.title)
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        Text("Profils")
                     }
                 }
                 .tag(0)
-            Text("Second View")
+            HistoryView()
                 .font(.title)
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        Text("Historique")
                     }
                 }
                 .tag(1)
+            AboutView()
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("second")
+                        Text("À propos")
+                    }
+                }
+                .tag(2)
         }
     }
 }
@@ -38,5 +47,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }			
+    }
 }

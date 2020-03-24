@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077A4164242906AD0027B495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4163242906AD0027B495 /* AppDelegate.swift */; };
-		077A4166242906AD0027B495 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4165242906AD0027B495 /* SceneDelegate.swift */; };
-		077A4168242906AD0027B495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4167242906AD0027B495 /* ContentView.swift */; };
 		077A416A242906AF0027B495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077A4169242906AF0027B495 /* Assets.xcassets */; };
 		077A416D242906AF0027B495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077A416C242906AF0027B495 /* Preview Assets.xcassets */; };
 		077A4170242906AF0027B495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077A416E242906AF0027B495 /* LaunchScreen.storyboard */; };
 		077A417B242906AF0027B495 /* AjarisUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A417A242906AF0027B495 /* AjarisUploaderTests.swift */; };
 		077A4186242906AF0027B495 /* AjarisUploaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4185242906AF0027B495 /* AjarisUploaderUITests.swift */; };
+		077A4196242910510027B495 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4195242910510027B495 /* ProfileViewController.swift */; };
+		077A41982429114C0027B495 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A41972429114C0027B495 /* HistoryViewController.swift */; };
+		077A419A2429119C0027B495 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A41992429119C0027B495 /* AboutViewController.swift */; };
+		077A419C242914FD0027B495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A419B242914FD0027B495 /* AppDelegate.swift */; };
+		077A41A0242915B40027B495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A419E242915B30027B495 /* ContentView.swift */; };
+		077A41A624291FBD0027B495 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A41A524291FBD0027B495 /* SceneDelegate.swift */; };
+		079DA6B4242A090000D9BA03 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B3242A090000D9BA03 /* ProfileView.swift */; };
+		079DA6B6242A095000D9BA03 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B5242A095000D9BA03 /* HistoryView.swift */; };
+		079DA6B8242A09E100D9BA03 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B7242A09E100D9BA03 /* AboutView.swift */; };
+		079DA6C3242A0F7F00D9BA03 /* ProfileCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6C2242A0F7F00D9BA03 /* ProfileCards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +43,26 @@
 
 /* Begin PBXFileReference section */
 		077A4160242906AD0027B495 /* AjarisUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjarisUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		077A4163242906AD0027B495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		077A4165242906AD0027B495 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		077A4167242906AD0027B495 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		077A4169242906AF0027B495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		077A416C242906AF0027B495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		077A416F242906AF0027B495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		077A4171242906AF0027B495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077A4171242906AF0027B495 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		077A4176242906AF0027B495 /* AjarisUploaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjarisUploaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		077A417A242906AF0027B495 /* AjarisUploaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjarisUploaderTests.swift; sourceTree = "<group>"; };
 		077A417C242906AF0027B495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		077A4181242906AF0027B495 /* AjarisUploaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjarisUploaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		077A4185242906AF0027B495 /* AjarisUploaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjarisUploaderUITests.swift; sourceTree = "<group>"; };
 		077A4187242906AF0027B495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077A4195242910510027B495 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		077A41972429114C0027B495 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		077A41992429119C0027B495 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		077A419B242914FD0027B495 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		077A419E242915B30027B495 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		077A41A524291FBD0027B495 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		079DA6B3242A090000D9BA03 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		079DA6B5242A095000D9BA03 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		079DA6B7242A09E100D9BA03 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		079DA6C2242A0F7F00D9BA03 /* ProfileCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +113,20 @@
 		077A4162242906AD0027B495 /* AjarisUploader */ = {
 			isa = PBXGroup;
 			children = (
-				077A4163242906AD0027B495 /* AppDelegate.swift */,
-				077A4165242906AD0027B495 /* SceneDelegate.swift */,
-				077A4167242906AD0027B495 /* ContentView.swift */,
+				077A419B242914FD0027B495 /* AppDelegate.swift */,
+				077A41A524291FBD0027B495 /* SceneDelegate.swift */,
+				077A419E242915B30027B495 /* ContentView.swift */,
 				077A4169242906AF0027B495 /* Assets.xcassets */,
 				077A416E242906AF0027B495 /* LaunchScreen.storyboard */,
 				077A4171242906AF0027B495 /* Info.plist */,
 				077A416B242906AF0027B495 /* Preview Content */,
+				077A4195242910510027B495 /* ProfileViewController.swift */,
+				077A41972429114C0027B495 /* HistoryViewController.swift */,
+				077A41992429119C0027B495 /* AboutViewController.swift */,
+				079DA6B3242A090000D9BA03 /* ProfileView.swift */,
+				079DA6B5242A095000D9BA03 /* HistoryView.swift */,
+				079DA6B7242A09E100D9BA03 /* AboutView.swift */,
+				079DA6C2242A0F7F00D9BA03 /* ProfileCards.swift */,
 			);
 			path = AjarisUploader;
 			sourceTree = "<group>";
@@ -267,9 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				077A4164242906AD0027B495 /* AppDelegate.swift in Sources */,
-				077A4166242906AD0027B495 /* SceneDelegate.swift in Sources */,
-				077A4168242906AD0027B495 /* ContentView.swift in Sources */,
+				077A419C242914FD0027B495 /* AppDelegate.swift in Sources */,
+				079DA6B6242A095000D9BA03 /* HistoryView.swift in Sources */,
+				077A41A0242915B40027B495 /* ContentView.swift in Sources */,
+				077A419A2429119C0027B495 /* AboutViewController.swift in Sources */,
+				079DA6B8242A09E100D9BA03 /* AboutView.swift in Sources */,
+				077A4196242910510027B495 /* ProfileViewController.swift in Sources */,
+				077A41982429114C0027B495 /* HistoryViewController.swift in Sources */,
+				079DA6C3242A0F7F00D9BA03 /* ProfileCards.swift in Sources */,
+				079DA6B4242A090000D9BA03 /* ProfileView.swift in Sources */,
+				077A41A624291FBD0027B495 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
