@@ -50,10 +50,9 @@ struct ProfileView: View {
     }
     
     private func delete(with indexSet: IndexSet) {
-        // TODO: Remove pref doesn't work
         indexSet.forEach {
-            profiles.remove(at: $0)
             ProfilePreferences.removePreference(profile: getProfile(from: profiles, at: $0))
+            profiles.remove(at: $0)
         }
     }
     

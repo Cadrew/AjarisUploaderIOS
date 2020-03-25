@@ -42,15 +42,12 @@ class ProfilePreferences {
     public static func removePreference(profile: Profile) {
         var profiles = ProfilePreferences.getPreferences()
         var index = -1
-        print(profile.getId())
         for i in 0...profiles.count - 1 {
-            print(profiles[i].getId())
             if(profiles[i].getId() == profile.getId()) {
                 index = i
                 break
             }
         }
-        print(index)
         if(index == -1) {
             return
         }
