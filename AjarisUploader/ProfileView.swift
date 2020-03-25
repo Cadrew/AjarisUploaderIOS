@@ -14,12 +14,16 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            List {
+            Form {
                 ForEach(profiles, id: \.id) { profile in
                     ProfileCards(name: profile.getName(), login: profile.getLogin())
+                        .background(Color.gray.opacity(0.15))
                 }
                 .onDelete(perform: delete)
             }
+            .background(Color.white.opacity(0))
+            
+            Spacer()
             
             Button(action: {
                 self.addProfileActive = true
@@ -32,14 +36,18 @@ struct ProfileView: View {
                     .clipShape(Circle())
             }
             .padding()
+            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
             
             NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
                 Text("")
             }
-        }
+        }.background(
+        Image("ajaris_background")
+            .resizable())
     }
     
     init() {
+        UITableView.appearance().backgroundColor = .clear
         /** For tests purpose **/
         // TODO: Remove
         ProfilePreferences.removeAllPreferences()
