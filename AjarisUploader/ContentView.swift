@@ -17,7 +17,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("first")
+                        Image(systemName: "person.and.person.fill")
                         Text("Profils")
                     }
                 }
@@ -26,7 +26,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
+                        Image(systemName: "list.dash")
                         Text("Historique")
                     }
                 }
@@ -35,7 +35,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
+                        Image(systemName: "info.circle.fill")
                         Text("À propos")
                     }
                 }

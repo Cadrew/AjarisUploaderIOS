@@ -41,7 +41,8 @@ struct ProfileView: View {
             NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
                 Text("")
             }
-        }.background(
+        }
+        .background(
         Image("ajaris_background")
             .resizable())
     }

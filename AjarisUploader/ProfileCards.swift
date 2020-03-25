@@ -26,6 +26,10 @@ struct ProfileCards: View {
                 }
                 .layoutPriority(100)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .topLeading)
+                
+                Image("icon_ajaris")
+                    .resizable()
+                    .frame(width: 30, height: 30)
             }
         .padding()
         }
