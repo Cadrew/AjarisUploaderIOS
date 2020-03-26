@@ -13,42 +13,52 @@ struct ProfileView: View {
     @State private var addProfileActive: Bool = false
     
     var body: some View {
-        VStack {
-            Form {
-                ForEach(profiles, id: \.id) { profile in
-                    ProfileCards(name: profile.getName(), login: profile.getLogin())
-                        .background(Color.gray.opacity(0.15))
+        NavigationView {
+            VStack {
+                Form {
+                    ForEach(profiles, id: \.id) { profile in
+                        ProfileCards(name: profile.getName(), login: profile.getLogin())
+                            .background(Color.gray.opacity(0.15))
+                    }
+                    .onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
+                .background(Color.white.opacity(0))
+                
+                Spacer()
+                
+                Button(action: {
+                    self.addProfileActive = true
+                }) {
+                    Image(systemName: "plus")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
+                        .clipShape(Circle())
+                }
+                .padding()
+                .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
+                
+                NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
+                    Text("")
+                }
             }
-            .background(Color.white.opacity(0))
+            .background(
+            Image("ajaris_background")
+                .resizable())
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
             
-            Spacer()
-            
-            Button(action: {
-                self.addProfileActive = true
-            }) {
-                Image(systemName: "plus")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.white)
-                    .padding()
-                    .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
-                    .clipShape(Circle())
-            }
-            .padding()
-            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
-            
-            NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
-                Text("")
-            }
         }
-        .background(
-        Image("ajaris_background")
-            .resizable())
     }
     
     init() {
         UITableView.appearance().backgroundColor = .clear
+        /*UINavigationBar.appearance().backgroundColor = UIColor(red: 11 / 255, green: 138 / 255, blue: 202 / 255, alpha: 1.0)
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor.white]*/
+        
         /** For tests purpose **/
         // TODO: Remove
         ProfilePreferences.removeAllPreferences()

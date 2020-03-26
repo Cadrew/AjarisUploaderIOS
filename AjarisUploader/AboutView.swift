@@ -29,7 +29,7 @@ struct AboutView: View {
                 .font(.system(size: 20))
                 
                 Text(".")
-                .font(.system(size: 20))
+                    .font(.system(size: 20))
             }
             
             Spacer()

@@ -15,6 +15,7 @@ struct AddProfileView: View {
     @State private var pwd: String = ""
     @State private var base: String = ""
     @State private var importProfile: String = ""
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         VStack {
@@ -43,20 +44,21 @@ struct AddProfileView: View {
             VStack {
                 Button(action: addProfile) {
                     Text("Ajouter le profil".uppercased())
+                        .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
+                        .cornerRadius(5)
+                        .disabled(true)
+                        .padding(.bottom, 10)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
-                .foregroundColor(Color.white)
-                .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
-                .cornerRadius(5)
-                .disabled(true)
                 
                 Button(action: cancelProfile) {
                     Text("Annuler".uppercased())
+                        .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
+                        .cornerRadius(5)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
-                .foregroundColor(Color.white)
-                .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
-                .cornerRadius(5)
             }
             
             Spacer()
@@ -64,6 +66,7 @@ struct AddProfileView: View {
         .background(
         Image("ajaris_background_alt")
             .resizable())
+        .font(.system(size: 15))
     }
     
     init() {
@@ -75,7 +78,7 @@ struct AddProfileView: View {
     }
     
     private func cancelProfile() {
-        // TODO
+        self.mode.wrappedValue.dismiss()
     }
 }
 
