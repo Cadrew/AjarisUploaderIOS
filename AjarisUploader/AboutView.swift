@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct AboutView: View {
     var body: some View {
@@ -14,8 +15,22 @@ struct AboutView: View {
             Spacer()
             
             Text("Ajaris UpLoader version 1.0.0")
+                .font(.system(size: 20))
             
-            Text("Ajaris est un produit orkis.com")
+            HStack(spacing: 0) {
+                Text("Ajaris est un produit ")
+                    .font(.system(size: 20))
+                
+                Button("orkis.com") {
+                    if let url = URL(string: "https://www.orkis.com") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .font(.system(size: 20))
+                
+                Text(".")
+                .font(.system(size: 20))
+            }
             
             Spacer()
             
@@ -26,6 +41,7 @@ struct AboutView: View {
                     .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
                     .cornerRadius(5)
                     .disabled(true)
+                    .font(.system(size: 15))
             }
             
             Spacer()
@@ -37,7 +53,18 @@ struct AboutView: View {
     }
     
     private func rateApp() {
-        // TODO
+        // TODO: set appId
+        let appId = "appId"
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else if let url = URL(string: "itms-apps://itunes.apple.com/app/" + appId) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
 }
 
