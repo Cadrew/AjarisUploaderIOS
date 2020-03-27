@@ -31,12 +31,25 @@ struct AddProfileView: View {
             VStack {
                 TextField("URL", text: $url)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                
                 TextField("Nom", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                
                 TextField("Pseudo", text: $login)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                
                 SecureField("Mot de passe", text: $pwd)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button(action: populateBasesAndImport) {
+                    Text("OK".uppercased())
+                        .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 50, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
+                        .cornerRadius(5)
+                        .disabled(true)
+                        .padding(.bottom, 10)
+                }
             }
             
             Spacer()
@@ -73,12 +86,21 @@ struct AddProfileView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
+    private func checkUrl() {
+        // TODO
+    }
+    
     private func addProfile() {
         // TODO
     }
     
     private func cancelProfile() {
         self.mode.wrappedValue.dismiss()
+    }
+    
+    private func populateBasesAndImport() {
+        // TODO
+        RequestAPI.checkUrl(url: "https://demo-interne.ajaris.com/Demo")
     }
 }
 

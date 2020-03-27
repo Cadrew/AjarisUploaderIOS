@@ -20,6 +20,8 @@
 		077A419C242914FD0027B495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A419B242914FD0027B495 /* AppDelegate.swift */; };
 		077A41A0242915B40027B495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A419E242915B30027B495 /* ContentView.swift */; };
 		077A41A624291FBD0027B495 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A41A524291FBD0027B495 /* SceneDelegate.swift */; };
+		078AAB03242DEA8400E4CEA5 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078AAB02242DEA8400E4CEA5 /* RequestAPI.swift */; };
+		078AAB07242DF58500E4CEA5 /* XMLProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078AAB06242DF58500E4CEA5 /* XMLProcessing.swift */; };
 		079DA6B4242A090000D9BA03 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B3242A090000D9BA03 /* ProfileView.swift */; };
 		079DA6B6242A095000D9BA03 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B5242A095000D9BA03 /* HistoryView.swift */; };
 		079DA6B8242A09E100D9BA03 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DA6B7242A09E100D9BA03 /* AboutView.swift */; };
@@ -65,6 +67,8 @@
 		077A419B242914FD0027B495 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		077A419E242915B30027B495 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		077A41A524291FBD0027B495 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		078AAB02242DEA8400E4CEA5 /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
+		078AAB06242DF58500E4CEA5 /* XMLProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLProcessing.swift; sourceTree = "<group>"; };
 		079DA6B3242A090000D9BA03 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		079DA6B5242A095000D9BA03 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		079DA6B7242A09E100D9BA03 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		077A4162242906AD0027B495 /* AjarisUploader */ = {
 			isa = PBXGroup;
 			children = (
+				078AAB01242DEA4900E4CEA5 /* api */,
 				077A419B242914FD0027B495 /* AppDelegate.swift */,
 				077A41A524291FBD0027B495 /* SceneDelegate.swift */,
 				077A419E242915B30027B495 /* ContentView.swift */,
@@ -167,6 +172,15 @@
 				077A4187242906AF0027B495 /* Info.plist */,
 			);
 			path = AjarisUploaderUITests;
+			sourceTree = "<group>";
+		};
+		078AAB01242DEA4900E4CEA5 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				078AAB02242DEA8400E4CEA5 /* RequestAPI.swift */,
+				078AAB06242DF58500E4CEA5 /* XMLProcessing.swift */,
+			);
+			name = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +317,7 @@
 				072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */,
 				077A419C242914FD0027B495 /* AppDelegate.swift in Sources */,
 				079DA6C8242A262A00D9BA03 /* Profile.swift in Sources */,
+				078AAB03242DEA8400E4CEA5 /* RequestAPI.swift in Sources */,
 				079DA6B6242A095000D9BA03 /* HistoryView.swift in Sources */,
 				077A41A0242915B40027B495 /* ContentView.swift in Sources */,
 				077A419A2429119C0027B495 /* AboutViewController.swift in Sources */,
@@ -311,6 +326,7 @@
 				077A4196242910510027B495 /* ProfileViewController.swift in Sources */,
 				079DA6C6242A251500D9BA03 /* ProfilePreferences.swift in Sources */,
 				077A41982429114C0027B495 /* HistoryViewController.swift in Sources */,
+				078AAB07242DF58500E4CEA5 /* XMLProcessing.swift in Sources */,
 				079DA6C3242A0F7F00D9BA03 /* ProfileCards.swift in Sources */,
 				079DA6B4242A090000D9BA03 /* ProfileView.swift in Sources */,
 				077A41A624291FBD0027B495 /* SceneDelegate.swift in Sources */,
