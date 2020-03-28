@@ -1,0 +1,6 @@
+framework module Pods_AjarisUploader_AjarisUploaderUITests {
+  umbrella header "Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

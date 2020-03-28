@@ -1,0 +1,1276 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8983361440DA703D7E1F9901F2657715 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1982A99EC0068FB848DB3B942CB83DB5 /* Protector.swift */; };
+		06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D349810CA61917A72856F3114DE4DA68 /* Validation.swift */; };
+		0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BB7D85C23DEE0174BE6AFD50EE6E41 /* CachedResponseHandler.swift */; };
+		0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059C4CC67DC9BED886103B6F8540E89 /* ServerTrustEvaluation.swift */; };
+		0FEDE336B669C9CE6806F7335ABF5856 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79356BB38DCE3AF0EE679B37B4436ED0 /* ResponseSerialization.swift */; };
+		14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842C3D78AC0E234008C8E176A413664 /* ParameterEncoding.swift */; };
+		17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B912D70323E7F86DCD780B2231C472 /* AFError.swift */; };
+		3242E9B805912FD09BD5E49126E24739 /* Pods-AjarisUploaderShare-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDC225B3ED0F26CCDC9DD5041BE36E6 /* Pods-AjarisUploaderShare-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3287A33A47BED12E16E6223F485F75F4 /* Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A583389625465FFC66960445CF7457A /* Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152D714F71E858000F62A8A616FCAF /* Result+Alamofire.swift */; };
+		42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8657059CCC1AA8B884882B6C21DF3 /* SessionDelegate.swift */; };
+		44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6BA50BC9798E96A96694316FD7F19 /* AlamofireExtended.swift */; };
+		48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2ABABCF96583B0736B746A886AECB /* RequestTaskMap.swift */; };
+		50525E4CFE89064E2A3BCFBE67DFD91F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252E34E06DE82E4A96FF19DDAAB47C48 /* HTTPHeaders.swift */; };
+		5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B0E4FA795EABD32357C1014201A8F9 /* MultipartFormData.swift */; };
+		5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3472833109D10A6D1A67609593B695A /* URLEncodedFormEncoder.swift */; };
+		5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8926879B94ED50118A3EA9401E92DD /* ParameterEncoder.swift */; };
+		69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832D5DCB54F4499206CA6D8DECB63DA /* Session.swift */; };
+		6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF2A5FCF56EE72AA71A552A8D39A96 /* Request.swift */; };
+		70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93EE927BDAEF08BD7FED7F2C1D56707 /* URLConvertible+URLRequestConvertible.swift */; };
+		7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87D7C9C22946B653EC891AD65CA774 /* NetworkReachabilityManager.swift */; };
+		92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906744E115B923BC81683FA8522951A8 /* OperationQueue+Alamofire.swift */; };
+		97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B079F294DA5D9A879E6D53A91F51A1E /* CFNetwork.framework */; };
+		9E7221EFCA70B38C6DD76A0B3867FBE2 /* Pods-AjarisUploader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E66A48B26A66BDBA595F0C9B07D47C45 /* Pods-AjarisUploader-dummy.m */; };
+		A020505123AF38ABC915CACB33ABB485 /* Pods-AjarisUploaderTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FF4C1924F2B2B8395DE38C883DFB1A8 /* Pods-AjarisUploaderTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A35DFADB56BB30670D17D121A9C943B3 /* Pods-AjarisUploaderTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D60F537362012B09F6A39C6F64DCB2 /* Pods-AjarisUploaderTests-dummy.m */; };
+		AD9899986955B2EC1EC20818C860C971 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C7B41827018BB1B59E447A617F1A6 /* RequestInterceptor.swift */; };
+		AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2598222A405D08F1B87C0463420492F3 /* URLSessionConfiguration+Alamofire.swift */; };
+		B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA569E409E59A3A7C43E582FFFECC049 /* Alamofire-dummy.m */; };
+		B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B0CF83AA71BBED2A70E4A0AE6D9CD /* HTTPMethod.swift */; };
+		B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6818CB68941B73559573DB4F55FF2F /* Alamofire.swift */; };
+		BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		C5B01F627F3CDBC7F4573B2E3FD1D6D3 /* Pods-AjarisUploader-AjarisUploaderUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF0DBD10C4095096F685F0F4740AFB0 /* Pods-AjarisUploader-AjarisUploaderUITests-dummy.m */; };
+		C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE821E7D82EDB49E8CCB3F4281CB873 /* RedirectHandler.swift */; };
+		C7369563F6946D8984124E1A546B6425 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A437F36AAA97B99103FBD62EA2687E78 /* Notifications.swift */; };
+		CACBD166E573774FB5613C34AA6DA7A7 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3EEA63BB9145123705DFCADC8EE27 /* EventMonitor.swift */; };
+		CDCC73A6D123281B6D8DE04BD9B380FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED5BF61D38354434EEDC4FD6779584 /* RetryPolicy.swift */; };
+		D912D057CF6F9DA5FD1D40EBC7B51872 /* Pods-AjarisUploaderShare-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A077A4E0195F56C661F49E6D5DB843C1 /* Pods-AjarisUploaderShare-dummy.m */; };
+		DAB4C13E689C653F354F1960FFEDC148 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE34987683B80FE97BBE5736A439B6 /* MultipartUpload.swift */; };
+		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578A4BA4B36B12F7C081E8ED1215837 /* URLRequest+Alamofire.swift */; };
+		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E408574C32514C9D9055B5A00125B4 /* DispatchQueue+Alamofire.swift */; };
+		EE6FF6FF9B7482690A076187D492CA9E /* Pods-AjarisUploader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0051BECE0714DEF4EACD8FA69DC91F5 /* Pods-AjarisUploader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AADD7113A629C5C8D34CF07909EFD /* Response.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B7EC671D4BAF1ABAD0598CAEE781719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		A1CBD5BC0C19E4C9B5770F0578F55BD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		D5E798F73D565029F743726B43557B4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 689A1C059F0ACB6BC51D33ABAB706AFF;
+			remoteInfo = "Pods-AjarisUploader";
+		};
+		D75FD828670CF30D9CBC251F6248EFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		053C9F1901EB057C7DB13082BED6E576 /* Pods-AjarisUploader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AjarisUploader-acknowledgements.markdown"; sourceTree = "<group>"; };
+		08AA6FF3F58D0BDC27E615D6FFA48352 /* Pods-AjarisUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploader.release.xcconfig"; sourceTree = "<group>"; };
+		0F826D2363B0358BEA89F41F51CF9510 /* Pods-AjarisUploaderShare.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AjarisUploaderShare.modulemap"; sourceTree = "<group>"; };
+		11B743A6D66B9CFB90C9116BF2128F56 /* Pods_AjarisUploaderShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AjarisUploaderShare.framework; path = "Pods-AjarisUploaderShare.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1982A99EC0068FB848DB3B942CB83DB5 /* Protector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protector.swift; path = Source/Protector.swift; sourceTree = "<group>"; };
+		1A583389625465FFC66960445CF7457A /* Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h"; sourceTree = "<group>"; };
+		1C6818CB68941B73559573DB4F55FF2F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		1F8926879B94ED50118A3EA9401E92DD /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
+		222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		252E34E06DE82E4A96FF19DDAAB47C48 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		2598222A405D08F1B87C0463420492F3 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		2E18EA2E977C9A83737500804E853362 /* Pods-AjarisUploader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AjarisUploader.modulemap"; sourceTree = "<group>"; };
+		325AADD7113A629C5C8D34CF07909EFD /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		33BB7D85C23DEE0174BE6AFD50EE6E41 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		47152D714F71E858000F62A8A616FCAF /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
+		4F380A974DB08A3A5AAA4F22694A85B3 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		54A4EEB69BBC70E2FF8E0670FF4CB228 /* Pods-AjarisUploaderShare-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AjarisUploaderShare-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57125E89B20544194C988358E364C5A0 /* Pods-AjarisUploader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploader-acknowledgements.plist"; sourceTree = "<group>"; };
+		5C4A2EA954452FABDC9746857D19ED7D /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60B0E4FA795EABD32357C1014201A8F9 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		6AC6C2A47145FA1261B6E8425F2262E1 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		7059C4CC67DC9BED886103B6F8540E89 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
+		717893C9D8E7ABC3EE6E45D00088C603 /* Pods-AjarisUploader-AjarisUploaderUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AjarisUploader-AjarisUploaderUITests.modulemap"; sourceTree = "<group>"; };
+		7541D81D9733F347D13F6DF433F91851 /* Pods-AjarisUploaderShare-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploaderShare-Info.plist"; sourceTree = "<group>"; };
+		761262D21E262E29CC400433BDB4FF16 /* Pods-AjarisUploaderTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploaderTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		76C3EEA63BB9145123705DFCADC8EE27 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		774B0CF83AA71BBED2A70E4A0AE6D9CD /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
+		77E408574C32514C9D9055B5A00125B4 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		79356BB38DCE3AF0EE679B37B4436ED0 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		7BDE34987683B80FE97BBE5736A439B6 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		7FF4C1924F2B2B8395DE38C883DFB1A8 /* Pods-AjarisUploaderTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AjarisUploaderTests-umbrella.h"; sourceTree = "<group>"; };
+		81493DCB5C496C4F63A99D8B9E16BE47 /* Pods_AjarisUploader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AjarisUploader.framework; path = "Pods-AjarisUploader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BF9A0A12C894C5A8851BBCBE35AE3A /* Pods-AjarisUploaderTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploaderTests-Info.plist"; sourceTree = "<group>"; };
+		8842C3D78AC0E234008C8E176A413664 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		8983361440DA703D7E1F9901F2657715 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		8B079F294DA5D9A879E6D53A91F51A1E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		8B0B1344F987C32AC4755EE0814CD15F /* Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8CC519362B9FB56A2496B463F5E5AC9E /* Pods-AjarisUploaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		906744E115B923BC81683FA8522951A8 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		955C7B41827018BB1B59E447A617F1A6 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
+		9586146D9D648A79CEA8B2D078B2E6C7 /* Pods-AjarisUploader-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploader-Info.plist"; sourceTree = "<group>"; };
+		96C2ABABCF96583B0736B746A886AECB /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		96ED5BF61D38354434EEDC4FD6779584 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		98065AD56BB68B351619DDA28E926758 /* Pods-AjarisUploaderTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AjarisUploaderTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A077A4E0195F56C661F49E6D5DB843C1 /* Pods-AjarisUploaderShare-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AjarisUploaderShare-dummy.m"; sourceTree = "<group>"; };
+		A0C7A2CF923E3D1629ECFA5FA9D2852C /* Pods-AjarisUploaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		A437F36AAA97B99103FBD62EA2687E78 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		A6EF2A5FCF56EE72AA71A552A8D39A96 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		A8490DA25D8AE9F767F696E9CCCC344B /* Pods-AjarisUploaderShare-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploaderShare-acknowledgements.plist"; sourceTree = "<group>"; };
+		A89204AC5B1E373496012D7927FACC3D /* Pods-AjarisUploader-AjarisUploaderUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AjarisUploader-AjarisUploaderUITests-frameworks.sh"; sourceTree = "<group>"; };
+		A93EE927BDAEF08BD7FED7F2C1D56707 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		B0051BECE0714DEF4EACD8FA69DC91F5 /* Pods-AjarisUploader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AjarisUploader-umbrella.h"; sourceTree = "<group>"; };
+		B0B912D70323E7F86DCD780B2231C472 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		B192026C069F0C1A28EA0F83CA6CF868 /* Pods-AjarisUploader-AjarisUploaderUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AjarisUploader-AjarisUploaderUITests-Info.plist"; sourceTree = "<group>"; };
+		BBF0DBD10C4095096F685F0F4740AFB0 /* Pods-AjarisUploader-AjarisUploaderUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AjarisUploader-AjarisUploaderUITests-dummy.m"; sourceTree = "<group>"; };
+		C3D60F537362012B09F6A39C6F64DCB2 /* Pods-AjarisUploaderTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AjarisUploaderTests-dummy.m"; sourceTree = "<group>"; };
+		C9444536146454C518AF330629E1A4D2 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AjarisUploader_AjarisUploaderUITests.framework; path = "Pods-AjarisUploader-AjarisUploaderUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA569E409E59A3A7C43E582FFFECC049 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		CB272A7FE1EF21306868998B4233C113 /* Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CDE821E7D82EDB49E8CCB3F4281CB873 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		D1A6BA50BC9798E96A96694316FD7F19 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
+		D20E36FE5C77F28D2A0032C3E93EF1E4 /* Pods-AjarisUploaderShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploaderShare.release.xcconfig"; sourceTree = "<group>"; };
+		D2D875F7C044C8B217EF5F195FE38EF6 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		D3472833109D10A6D1A67609593B695A /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
+		D349810CA61917A72856F3114DE4DA68 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		D37CFEA6D8A966EFA721BBEDB40FE563 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D4A8406607A631C0971ACDCFCCBB8EF0 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D578A4BA4B36B12F7C081E8ED1215837 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
+		DE2FCFD40756AA57E1BB8AE61C99FCE3 /* Pods-AjarisUploader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploader.debug.xcconfig"; sourceTree = "<group>"; };
+		E1297E30A2A7DA2378C60285C4A48B88 /* Pods_AjarisUploaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AjarisUploaderTests.framework; path = "Pods-AjarisUploaderTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66A48B26A66BDBA595F0C9B07D47C45 /* Pods-AjarisUploader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AjarisUploader-dummy.m"; sourceTree = "<group>"; };
+		ECBC8CD0D74AF2ADD8F731A6B8CFFAC0 /* Pods-AjarisUploaderTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AjarisUploaderTests.modulemap"; sourceTree = "<group>"; };
+		ECDC225B3ED0F26CCDC9DD5041BE36E6 /* Pods-AjarisUploaderShare-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AjarisUploaderShare-umbrella.h"; sourceTree = "<group>"; };
+		EE8B6AD67CCFF2A7F3DB30DE1510376E /* Pods-AjarisUploaderShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AjarisUploaderShare.debug.xcconfig"; sourceTree = "<group>"; };
+		F53B9DBB8854DA762FCD2DF34DD0B0E9 /* Pods-AjarisUploader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AjarisUploader-frameworks.sh"; sourceTree = "<group>"; };
+		F832D5DCB54F4499206CA6D8DECB63DA /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
+		FC87D7C9C22946B653EC891AD65CA774 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		FED8657059CCC1AA8B884882B6C21DF3 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49525166A2205ED4FD82273E073165F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEDE336B669C9CE6806F7335ABF5856 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78B1CD376A8190611316AC6F2EC69193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB4C13E689C653F354F1960FFEDC148 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		817617052FA171DE7FAC2AE06E981B52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDCC73A6D123281B6D8DE04BD9B380FE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B0D8633F410345F93419B8C3D7B6916 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */,
+				BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B519D00E9E6855484E7E6F1B8554EBFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50525E4CFE89064E2A3BCFBE67DFD91F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08C3CADBFE7473C8C2720B971358481C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC1ED248BA98F2E22521DA618B8E5953 /* Alamofire */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E34DCC8E2CF86B8D72232914781A840D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		380477043D6355D161F56ED1C6881D9B /* Pods-AjarisUploaderShare */ = {
+			isa = PBXGroup;
+			children = (
+				0F826D2363B0358BEA89F41F51CF9510 /* Pods-AjarisUploaderShare.modulemap */,
+				54A4EEB69BBC70E2FF8E0670FF4CB228 /* Pods-AjarisUploaderShare-acknowledgements.markdown */,
+				A8490DA25D8AE9F767F696E9CCCC344B /* Pods-AjarisUploaderShare-acknowledgements.plist */,
+				A077A4E0195F56C661F49E6D5DB843C1 /* Pods-AjarisUploaderShare-dummy.m */,
+				7541D81D9733F347D13F6DF433F91851 /* Pods-AjarisUploaderShare-Info.plist */,
+				ECDC225B3ED0F26CCDC9DD5041BE36E6 /* Pods-AjarisUploaderShare-umbrella.h */,
+				EE8B6AD67CCFF2A7F3DB30DE1510376E /* Pods-AjarisUploaderShare.debug.xcconfig */,
+				D20E36FE5C77F28D2A0032C3E93EF1E4 /* Pods-AjarisUploaderShare.release.xcconfig */,
+			);
+			name = "Pods-AjarisUploaderShare";
+			path = "Target Support Files/Pods-AjarisUploaderShare";
+			sourceTree = "<group>";
+		};
+		42052BB402F4C45C74DCCBFE679F5BCD /* Pods-AjarisUploader */ = {
+			isa = PBXGroup;
+			children = (
+				2E18EA2E977C9A83737500804E853362 /* Pods-AjarisUploader.modulemap */,
+				053C9F1901EB057C7DB13082BED6E576 /* Pods-AjarisUploader-acknowledgements.markdown */,
+				57125E89B20544194C988358E364C5A0 /* Pods-AjarisUploader-acknowledgements.plist */,
+				E66A48B26A66BDBA595F0C9B07D47C45 /* Pods-AjarisUploader-dummy.m */,
+				F53B9DBB8854DA762FCD2DF34DD0B0E9 /* Pods-AjarisUploader-frameworks.sh */,
+				9586146D9D648A79CEA8B2D078B2E6C7 /* Pods-AjarisUploader-Info.plist */,
+				B0051BECE0714DEF4EACD8FA69DC91F5 /* Pods-AjarisUploader-umbrella.h */,
+				DE2FCFD40756AA57E1BB8AE61C99FCE3 /* Pods-AjarisUploader.debug.xcconfig */,
+				08AA6FF3F58D0BDC27E615D6FFA48352 /* Pods-AjarisUploader.release.xcconfig */,
+			);
+			name = "Pods-AjarisUploader";
+			path = "Target Support Files/Pods-AjarisUploader";
+			sourceTree = "<group>";
+		};
+		6F231B065A787719E0C1B7964E78C43D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42052BB402F4C45C74DCCBFE679F5BCD /* Pods-AjarisUploader */,
+				D70023D08BD80D4E16F97D5F56A2977E /* Pods-AjarisUploader-AjarisUploaderUITests */,
+				380477043D6355D161F56ED1C6881D9B /* Pods-AjarisUploaderShare */,
+				FFA2E4BB016B496291EE7D561821FA68 /* Pods-AjarisUploaderTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8DBB92849F82B1DE2A819D63AB182DF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				81493DCB5C496C4F63A99D8B9E16BE47 /* Pods_AjarisUploader.framework */,
+				C9444536146454C518AF330629E1A4D2 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */,
+				11B743A6D66B9CFB90C9116BF2128F56 /* Pods_AjarisUploaderShare.framework */,
+				E1297E30A2A7DA2378C60285C4A48B88 /* Pods_AjarisUploaderTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC1ED248BA98F2E22521DA618B8E5953 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				B0B912D70323E7F86DCD780B2231C472 /* AFError.swift */,
+				1C6818CB68941B73559573DB4F55FF2F /* Alamofire.swift */,
+				D1A6BA50BC9798E96A96694316FD7F19 /* AlamofireExtended.swift */,
+				33BB7D85C23DEE0174BE6AFD50EE6E41 /* CachedResponseHandler.swift */,
+				77E408574C32514C9D9055B5A00125B4 /* DispatchQueue+Alamofire.swift */,
+				76C3EEA63BB9145123705DFCADC8EE27 /* EventMonitor.swift */,
+				252E34E06DE82E4A96FF19DDAAB47C48 /* HTTPHeaders.swift */,
+				774B0CF83AA71BBED2A70E4A0AE6D9CD /* HTTPMethod.swift */,
+				60B0E4FA795EABD32357C1014201A8F9 /* MultipartFormData.swift */,
+				7BDE34987683B80FE97BBE5736A439B6 /* MultipartUpload.swift */,
+				FC87D7C9C22946B653EC891AD65CA774 /* NetworkReachabilityManager.swift */,
+				A437F36AAA97B99103FBD62EA2687E78 /* Notifications.swift */,
+				906744E115B923BC81683FA8522951A8 /* OperationQueue+Alamofire.swift */,
+				1F8926879B94ED50118A3EA9401E92DD /* ParameterEncoder.swift */,
+				8842C3D78AC0E234008C8E176A413664 /* ParameterEncoding.swift */,
+				1982A99EC0068FB848DB3B942CB83DB5 /* Protector.swift */,
+				CDE821E7D82EDB49E8CCB3F4281CB873 /* RedirectHandler.swift */,
+				A6EF2A5FCF56EE72AA71A552A8D39A96 /* Request.swift */,
+				955C7B41827018BB1B59E447A617F1A6 /* RequestInterceptor.swift */,
+				96C2ABABCF96583B0736B746A886AECB /* RequestTaskMap.swift */,
+				325AADD7113A629C5C8D34CF07909EFD /* Response.swift */,
+				79356BB38DCE3AF0EE679B37B4436ED0 /* ResponseSerialization.swift */,
+				47152D714F71E858000F62A8A616FCAF /* Result+Alamofire.swift */,
+				96ED5BF61D38354434EEDC4FD6779584 /* RetryPolicy.swift */,
+				7059C4CC67DC9BED886103B6F8540E89 /* ServerTrustEvaluation.swift */,
+				F832D5DCB54F4499206CA6D8DECB63DA /* Session.swift */,
+				FED8657059CCC1AA8B884882B6C21DF3 /* SessionDelegate.swift */,
+				A93EE927BDAEF08BD7FED7F2C1D56707 /* URLConvertible+URLRequestConvertible.swift */,
+				D3472833109D10A6D1A67609593B695A /* URLEncodedFormEncoder.swift */,
+				D578A4BA4B36B12F7C081E8ED1215837 /* URLRequest+Alamofire.swift */,
+				2598222A405D08F1B87C0463420492F3 /* URLSessionConfiguration+Alamofire.swift */,
+				D349810CA61917A72856F3114DE4DA68 /* Validation.swift */,
+				E54E43FD3458F5DE8FE802AE2526AF81 /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				08C3CADBFE7473C8C2720B971358481C /* Pods */,
+				8DBB92849F82B1DE2A819D63AB182DF0 /* Products */,
+				6F231B065A787719E0C1B7964E78C43D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D70023D08BD80D4E16F97D5F56A2977E /* Pods-AjarisUploader-AjarisUploaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				717893C9D8E7ABC3EE6E45D00088C603 /* Pods-AjarisUploader-AjarisUploaderUITests.modulemap */,
+				CB272A7FE1EF21306868998B4233C113 /* Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.markdown */,
+				8B0B1344F987C32AC4755EE0814CD15F /* Pods-AjarisUploader-AjarisUploaderUITests-acknowledgements.plist */,
+				BBF0DBD10C4095096F685F0F4740AFB0 /* Pods-AjarisUploader-AjarisUploaderUITests-dummy.m */,
+				A89204AC5B1E373496012D7927FACC3D /* Pods-AjarisUploader-AjarisUploaderUITests-frameworks.sh */,
+				B192026C069F0C1A28EA0F83CA6CF868 /* Pods-AjarisUploader-AjarisUploaderUITests-Info.plist */,
+				1A583389625465FFC66960445CF7457A /* Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h */,
+				D4A8406607A631C0971ACDCFCCBB8EF0 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */,
+				D37CFEA6D8A966EFA721BBEDB40FE563 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */,
+			);
+			name = "Pods-AjarisUploader-AjarisUploaderUITests";
+			path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests";
+			sourceTree = "<group>";
+		};
+		E34DCC8E2CF86B8D72232914781A840D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8B079F294DA5D9A879E6D53A91F51A1E /* CFNetwork.framework */,
+				222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E54E43FD3458F5DE8FE802AE2526AF81 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2D875F7C044C8B217EF5F195FE38EF6 /* Alamofire.modulemap */,
+				4F380A974DB08A3A5AAA4F22694A85B3 /* Alamofire.xcconfig */,
+				CA569E409E59A3A7C43E582FFFECC049 /* Alamofire-dummy.m */,
+				5C4A2EA954452FABDC9746857D19ED7D /* Alamofire-Info.plist */,
+				6AC6C2A47145FA1261B6E8425F2262E1 /* Alamofire-prefix.pch */,
+				8983361440DA703D7E1F9901F2657715 /* Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		FFA2E4BB016B496291EE7D561821FA68 /* Pods-AjarisUploaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECBC8CD0D74AF2ADD8F731A6B8CFFAC0 /* Pods-AjarisUploaderTests.modulemap */,
+				98065AD56BB68B351619DDA28E926758 /* Pods-AjarisUploaderTests-acknowledgements.markdown */,
+				761262D21E262E29CC400433BDB4FF16 /* Pods-AjarisUploaderTests-acknowledgements.plist */,
+				C3D60F537362012B09F6A39C6F64DCB2 /* Pods-AjarisUploaderTests-dummy.m */,
+				81BF9A0A12C894C5A8851BBCBE35AE3A /* Pods-AjarisUploaderTests-Info.plist */,
+				7FF4C1924F2B2B8395DE38C883DFB1A8 /* Pods-AjarisUploaderTests-umbrella.h */,
+				8CC519362B9FB56A2496B463F5E5AC9E /* Pods-AjarisUploaderTests.debug.xcconfig */,
+				A0C7A2CF923E3D1629ECFA5FA9D2852C /* Pods-AjarisUploaderTests.release.xcconfig */,
+			);
+			name = "Pods-AjarisUploaderTests";
+			path = "Target Support Files/Pods-AjarisUploaderTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4434B5402C0D607430DC90BF25801C0E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3287A33A47BED12E16E6223F485F75F4 /* Pods-AjarisUploader-AjarisUploaderUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BC8512FA4B13BDF002AC0F7259E4DAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3242E9B805912FD09BD5E49126E24739 /* Pods-AjarisUploaderShare-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDF288DD930A46B5F0F198C225895C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDBA2A653D91682A12D2C5142C00413D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A020505123AF38ABC915CACB33ABB485 /* Pods-AjarisUploaderTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F99EE065FE13ED694792F917D36F4F34 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE6FF6FF9B7482690A076187D492CA9E /* Pods-AjarisUploader-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		41BF8926055A402638D2BCAFE6FBE497 /* Pods-AjarisUploaderShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD58F1109C565375F3A75B707F15F30B /* Build configuration list for PBXNativeTarget "Pods-AjarisUploaderShare" */;
+			buildPhases = (
+				6BC8512FA4B13BDF002AC0F7259E4DAB /* Headers */,
+				852A4A503B5282390D1217E8C6B2BE5B /* Sources */,
+				78B1CD376A8190611316AC6F2EC69193 /* Frameworks */,
+				BFC25A875AB82CE1CBCA3ADB5E531FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AA82897D89624881CCB37CC513BDD94 /* PBXTargetDependency */,
+			);
+			name = "Pods-AjarisUploaderShare";
+			productName = "Pods-AjarisUploaderShare";
+			productReference = 11B743A6D66B9CFB90C9116BF2128F56 /* Pods_AjarisUploaderShare.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4F862B6711FA2917A722A6894A08ABFB /* Pods-AjarisUploader-AjarisUploaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72DD756295550BB7FDA964AFA272A9D3 /* Build configuration list for PBXNativeTarget "Pods-AjarisUploader-AjarisUploaderUITests" */;
+			buildPhases = (
+				4434B5402C0D607430DC90BF25801C0E /* Headers */,
+				1A0BDF56FC953ABB1BB19109235F3AAC /* Sources */,
+				817617052FA171DE7FAC2AE06E981B52 /* Frameworks */,
+				1933F11804000E115E8EEDC6AB45E46D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB40845125041CE2A0AD3BF4C716CD04 /* PBXTargetDependency */,
+			);
+			name = "Pods-AjarisUploader-AjarisUploaderUITests";
+			productName = "Pods-AjarisUploader-AjarisUploaderUITests";
+			productReference = C9444536146454C518AF330629E1A4D2 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		689A1C059F0ACB6BC51D33ABAB706AFF /* Pods-AjarisUploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C23CB4B7F1F29BFD1046B37B9146B450 /* Build configuration list for PBXNativeTarget "Pods-AjarisUploader" */;
+			buildPhases = (
+				F99EE065FE13ED694792F917D36F4F34 /* Headers */,
+				31C4169B6796AC70776C2AEB56842E1E /* Sources */,
+				B519D00E9E6855484E7E6F1B8554EBFF /* Frameworks */,
+				B58DB2BA74B56B9548D6A51D6881B6D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD83E2CD310EA9808FEA6410FBA2F009 /* PBXTargetDependency */,
+			);
+			name = "Pods-AjarisUploader";
+			productName = "Pods-AjarisUploader";
+			productReference = 81493DCB5C496C4F63A99D8B9E16BE47 /* Pods_AjarisUploader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		71B8B6F9D325C50C82DA7609F56A8FB9 /* Pods-AjarisUploaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DBA469230ACAB9EE733B3D8E572331D /* Build configuration list for PBXNativeTarget "Pods-AjarisUploaderTests" */;
+			buildPhases = (
+				DDBA2A653D91682A12D2C5142C00413D /* Headers */,
+				4ACDE98B2CDFC3600F2B1B40688FFCAC /* Sources */,
+				49525166A2205ED4FD82273E073165F7 /* Frameworks */,
+				463C9D60E176D98F81E182CAE6038915 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B459F7AF18BD370EF0591237B8E7781 /* PBXTargetDependency */,
+			);
+			name = "Pods-AjarisUploaderTests";
+			productName = "Pods-AjarisUploaderTests";
+			productReference = E1297E30A2A7DA2378C60285C4A48B88 /* Pods_AjarisUploaderTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B2B8EC7E21CDBFF2BDA26B1B4AC4C0D /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				ADDF288DD930A46B5F0F198C225895C9 /* Headers */,
+				7349DB0E9BEBE664696F1DCC25226F26 /* Sources */,
+				8B0D8633F410345F93419B8C3D7B6916 /* Frameworks */,
+				28FC0024B79C28A420D7C4FEBB9E3AEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8DBB92849F82B1DE2A819D63AB182DF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				689A1C059F0ACB6BC51D33ABAB706AFF /* Pods-AjarisUploader */,
+				4F862B6711FA2917A722A6894A08ABFB /* Pods-AjarisUploader-AjarisUploaderUITests */,
+				41BF8926055A402638D2BCAFE6FBE497 /* Pods-AjarisUploaderShare */,
+				71B8B6F9D325C50C82DA7609F56A8FB9 /* Pods-AjarisUploaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1933F11804000E115E8EEDC6AB45E46D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FC0024B79C28A420D7C4FEBB9E3AEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463C9D60E176D98F81E182CAE6038915 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58DB2BA74B56B9548D6A51D6881B6D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC25A875AB82CE1CBCA3ADB5E531FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A0BDF56FC953ABB1BB19109235F3AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5B01F627F3CDBC7F4573B2E3FD1D6D3 /* Pods-AjarisUploader-AjarisUploaderUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31C4169B6796AC70776C2AEB56842E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E7221EFCA70B38C6DD76A0B3867FBE2 /* Pods-AjarisUploader-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ACDE98B2CDFC3600F2B1B40688FFCAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A35DFADB56BB30670D17D121A9C943B3 /* Pods-AjarisUploaderTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7349DB0E9BEBE664696F1DCC25226F26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */,
+				B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */,
+				B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */,
+				44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */,
+				0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */,
+				E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */,
+				CACBD166E573774FB5613C34AA6DA7A7 /* EventMonitor.swift in Sources */,
+				56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */,
+				B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */,
+				5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */,
+				E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */,
+				7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */,
+				C7369563F6946D8984124E1A546B6425 /* Notifications.swift in Sources */,
+				92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */,
+				5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */,
+				14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */,
+				0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */,
+				C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */,
+				6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */,
+				AD9899986955B2EC1EC20818C860C971 /* RequestInterceptor.swift in Sources */,
+				48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */,
+				F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */,
+				13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */,
+				4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */,
+				D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */,
+				0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */,
+				69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */,
+				42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */,
+				70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */,
+				5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */,
+				E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */,
+				AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */,
+				06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852A4A503B5282390D1217E8C6B2BE5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D912D057CF6F9DA5FD1D40EBC7B51872 /* Pods-AjarisUploaderShare-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AA82897D89624881CCB37CC513BDD94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 3B7EC671D4BAF1ABAD0598CAEE781719 /* PBXContainerItemProxy */;
+		};
+		3B459F7AF18BD370EF0591237B8E7781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-AjarisUploader";
+			target = 689A1C059F0ACB6BC51D33ABAB706AFF /* Pods-AjarisUploader */;
+			targetProxy = D5E798F73D565029F743726B43557B4D /* PBXContainerItemProxy */;
+		};
+		AD83E2CD310EA9808FEA6410FBA2F009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = D75FD828670CF30D9CBC251F6248EFD7 /* PBXContainerItemProxy */;
+		};
+		BB40845125041CE2A0AD3BF4C716CD04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = A1CBD5BC0C19E4C9B5770F0578F55BD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00319A2330DC739FCBFBB6CFB0C5F58D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F380A974DB08A3A5AAA4F22694A85B3 /* Alamofire.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		022714B9EBDB2009CD4593EAE45FB4D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08AA6FF3F58D0BDC27E615D6FFA48352 /* Pods-AjarisUploader.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27D654AD882D06163916A16B6B0FEBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20E36FE5C77F28D2A0032C3E93EF1E4 /* Pods-AjarisUploaderShare.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		33FF0BD30A2D3F9C56996E576F276666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D37CFEA6D8A966EFA721BBEDB40FE563 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43F5A2094EE8FE48B533A376127D5BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4A8406607A631C0971ACDCFCCBB8EF0 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5EC55FBF099861941D3BD62A7C96D2CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE8B6AD67CCFF2A7F3DB30DE1510376E /* Pods-AjarisUploaderShare.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		841B333A681F3CD8F5735A233358A0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC519362B9FB56A2496B463F5E5AC9E /* Pods-AjarisUploaderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85FAF86520CD09EB32A88E4E834A146B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE2FCFD40756AA57E1BB8AE61C99FCE3 /* Pods-AjarisUploader.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F659822BFF3B3C20B29B76B89800A5E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F380A974DB08A3A5AAA4F22694A85B3 /* Alamofire.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F7DE6AF394437D877E3E7566B1067641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C7A2CF923E3D1629ECFA5FA9D2852C /* Pods-AjarisUploaderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DBA469230ACAB9EE733B3D8E572331D /* Build configuration list for PBXNativeTarget "Pods-AjarisUploaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841B333A681F3CD8F5735A233358A0D5 /* Debug */,
+				F7DE6AF394437D877E3E7566B1067641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B2B8EC7E21CDBFF2BDA26B1B4AC4C0D /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00319A2330DC739FCBFBB6CFB0C5F58D /* Debug */,
+				F659822BFF3B3C20B29B76B89800A5E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72DD756295550BB7FDA964AFA272A9D3 /* Build configuration list for PBXNativeTarget "Pods-AjarisUploader-AjarisUploaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43F5A2094EE8FE48B533A376127D5BC1 /* Debug */,
+				33FF0BD30A2D3F9C56996E576F276666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD58F1109C565375F3A75B707F15F30B /* Build configuration list for PBXNativeTarget "Pods-AjarisUploaderShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EC55FBF099861941D3BD62A7C96D2CE /* Debug */,
+				27D654AD882D06163916A16B6B0FEBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C23CB4B7F1F29BFD1046B37B9146B450 /* Build configuration list for PBXNativeTarget "Pods-AjarisUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85FAF86520CD09EB32A88E4E834A146B /* Debug */,
+				022714B9EBDB2009CD4593EAE45FB4D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
