@@ -21,8 +21,19 @@ class ShareViewController: SLComposeServiceViewController {
         return true
     }
     
+    override func configurationItems() -> [Any]! {
+       // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
+        let item = SLComposeSheetConfigurationItem()!
+       item.title = "Test";
+       item.value = "Value";
+       item.tapHandler = self.show;
+    return [item]
+    }
 
-    
+    func show() {
+           print("TEST");
+    }
+        
     func upload(imgData: Data, jsessionid: String, ptoken: String, Document_numbasedoc: String){
     // Fonction test fonctionnelle
         let url = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
@@ -44,7 +55,10 @@ class ShareViewController: SLComposeServiceViewController {
         }, to: url, method: .post, headers: ["Cookie": "JSESSIONID=E626D1160AC82031E6715474733937E3"])
    .response { (response) in
             debugPrint(response)
-   }
+   }.uploadProgress { progress in
+        print("Upload Progress: \(progress.fractionCompleted)")
+    }
+        	
 }
     
 
@@ -95,9 +109,4 @@ class ShareViewController: SLComposeServiceViewController {
             }
 //            self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         }
-    
-    override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        return []
-    }
 }

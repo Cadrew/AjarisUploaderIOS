@@ -14,8 +14,8 @@
             filePath = "AjarisUploaderShare/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "didSelectPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "AjarisUploaderShare/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "upload(imgData:jsessionid:ptoken:Document_numbasedoc:)"
             landmarkType = "7">
             <Locations>
@@ -72,16 +72,63 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "255A7B23-7577-4AAF-8AF6-E87498BB92AB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AjarisUploaderShare/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "upload(imgData:jsessionid:ptoken:Document_numbasedoc:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "255A7B23-7577-4AAF-8AF6-E87498BB92AB - 6b743ff65af21c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AjarisUploaderShare.ShareViewController.upload(imgData: Foundation.Data, jsessionid: Swift.String, ptoken: Swift.String, Document_numbasedoc: Swift.String) -&gt; ()"
+                  moduleName = "AjarisUploaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user168808/Documents/AjarisUploaderIOS/AjarisUploaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1533">
+               </Location>
+               <Location
+                  uuid = "255A7B23-7577-4AAF-8AF6-E87498BB92AB - 249a370ee2953740"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in AjarisUploaderShare.ShareViewController.upload(imgData: Foundation.Data, jsessionid: Swift.String, ptoken: Swift.String, Document_numbasedoc: Swift.String) -&gt; ()"
+                  moduleName = "AjarisUploaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user168808/Documents/AjarisUploaderIOS/AjarisUploaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "255A7B23-7577-4AAF-8AF6-E87498BB92AB - 226c2940d6f51167"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (__C.NSProgress) -&gt; () in AjarisUploaderShare.ShareViewController.upload(imgData: Foundation.Data, jsessionid: Swift.String, ptoken: Swift.String, Document_numbasedoc: Swift.String) -&gt; ()"
+                  moduleName = "AjarisUploaderShare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user168808/Documents/AjarisUploaderIOS/AjarisUploaderShare/ShareViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +141,8 @@
             filePath = "AjarisUploaderShare/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "upload(imgData:jsessionid:ptoken:Document_numbasedoc:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +157,8 @@
             filePath = "AjarisUploaderShare/ShareViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "upload(imgData:jsessionid:ptoken:Document_numbasedoc:)"
             landmarkType = "7">
          </BreakpointContent>
