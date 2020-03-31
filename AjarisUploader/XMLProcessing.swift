@@ -24,9 +24,7 @@ class XMLProcessing: NSObject, XMLParserDelegate {
         guard let xmlData = dataString?.data(using: .utf8) else { return nil }
         let parser = XMLParser(data: xmlData)
         parser.delegate = self
-        if parser.parse() {
-            print(self.results ?? "No results")
-        }
+        parser.parse()
     }
     
     func parserDidStartDocument(_ parser: XMLParser) {
@@ -79,5 +77,9 @@ class XMLProcessing: NSObject, XMLParserDelegate {
         currentValue = nil
         currentDictionary = nil
         results = nil
+    }
+    
+    public func getResults() -> [[String: String]]? {
+        return self.results
     }
 }

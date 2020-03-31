@@ -13,7 +13,7 @@ class RequestAPI {
     public static let UPLOGIN: String = "/upLogin.do"
     public static let SETIMPORTCONFIG: String = "/upSetImportConfig.do"
     
-    public static func checkUrl(url: String) {
+    public static func checkUrl(url: String, finished: @escaping (_ result: Data)->()) {
         let urlRequest = URL(string: url + RequestAPI.UPCHECK)!
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if error != nil || data == nil {
@@ -26,7 +26,7 @@ class RequestAPI {
                 return
             }
             
-            var xml = XMLProcessing(data: data ?? Data())
+            finished(data ?? Data())
         }
 
         task.resume()

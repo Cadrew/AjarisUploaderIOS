@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct AddProfileView: View {
+    @State private var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
     @State private var url: String = ""
     @State private var name: String = ""
     @State private var login: String = ""
+    @State private var loginDisabled: Bool = true
     @State private var pwd: String = ""
+    @State private var pwdDisabled: Bool = true
     @State private var base: String = ""
     @State private var importProfile: String = ""
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
@@ -29,17 +32,21 @@ struct AddProfileView: View {
             Spacer()
             
             VStack {
-                TextField("URL", text: $url)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("URL", text: $url, onEditingChanged: {_ in 
+                    self.checkUrl()
+                })
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 TextField("Nom", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 TextField("Pseudo", text: $login)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disabled(self.loginDisabled)
                 
                 SecureField("Mot de passe", text: $pwd)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disabled(self.pwdDisabled)
                 
                 Button(action: populateBasesAndImport) {
                     Text("OK".uppercased())
@@ -87,7 +94,16 @@ struct AddProfileView: View {
     }
     
     private func checkUrl() {
-        // TODO
+        self.loginDisabled = true
+        self.pwdDisabled = true
+        RequestAPI.checkUrl(url: self.url) { (result) -> () in
+            self.lastDocument = XMLProcessing(data: result)!
+            if(self.lastDocument.getResults()![0]["error-code"] == "0") {
+                self.loginDisabled = false
+                self.pwdDisabled = false
+            }
+                
+        }
     }
     
     private func addProfile() {
@@ -100,7 +116,13 @@ struct AddProfileView: View {
     
     private func populateBasesAndImport() {
         // TODO
-        RequestAPI.checkUrl(url: "https://demo-interne.ajaris.com/Demo")
+        RequestAPI.checkUrl(url: "https://demo-interne.ajaris.com/Demo") { (result) -> () in
+            self.lastDocument = XMLProcessing(data: result)!
+            if(self.lastDocument.getResults()![0]["error-code"] == "0") {
+                self.loginDisabled = false
+                self.pwdDisabled = false
+            }
+        }
     }
 }
 
