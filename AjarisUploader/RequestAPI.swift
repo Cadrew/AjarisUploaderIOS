@@ -18,11 +18,13 @@ class RequestAPI {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
+                finished(Data())
                 return
             }
 
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                finished(Data())
                 return
             }
             
@@ -30,6 +32,28 @@ class RequestAPI {
         }
 
         task.resume()
+    }
+    
+    public static func login(url: String, login: String, pwd: String, finished: @escaping (_ result: Data)->()) {
+        let urlRequest = URL(string: url + RequestAPI.UPCHECK + "?pseudo=" + login + "&password=" + pwd + "&ajaupmo=ajaupmo")!
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                finished(Data())
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                finished(Data())
+                return
+            }
+            
+            finished(data ?? Data())
+        }
+
+        task.resume()
+        
     }
     
 }
