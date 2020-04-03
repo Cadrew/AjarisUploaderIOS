@@ -11,6 +11,7 @@ import Foundation
 class RequestAPI {
     public static let UPCHECK: String = "/upCheck.do"
     public static let UPLOGIN: String = "/upLogin.do"
+    public static let UPLOGOUT: String = "/upLogout.do"
     public static let SETIMPORTCONFIG: String = "/upSetImportConfig.do"
     
     public static func checkUrl(url: String, finished: @escaping (_ result: Data)->()) {
@@ -35,7 +36,7 @@ class RequestAPI {
     }
     
     public static func login(url: String, login: String, pwd: String, finished: @escaping (_ result: Data)->()) {
-        let urlRequest = URL(string: url + RequestAPI.UPCHECK + "?pseudo=" + login + "&password=" + pwd + "&ajaupmo=ajaupmo")!
+        let urlRequest = URL(string: url + RequestAPI.UPLOGIN + "?pseudo=" + login + "&password=" + pwd + "&ajaupmo=ajaupmo")!
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
@@ -53,7 +54,23 @@ class RequestAPI {
         }
 
         task.resume()
-        
+    }
+    
+    public static func logout(url: String, sessionid: String) {
+        let urlRequest = URL(string: url + RequestAPI.UPLOGOUT + "?jessionid=" + sessionid)!
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+        }
+
+        task.resume()
     }
     
 }

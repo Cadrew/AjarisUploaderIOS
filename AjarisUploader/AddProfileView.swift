@@ -18,11 +18,18 @@ struct AddProfileView: View {
     @State private var previousPwd: String = ""
     @State private var pwdIsFocused: Bool = false
     @State private var pwdDisabled: Bool = true
-    @State private var base: String = ""
-    @State private var importProfile: String = ""
+    @State private var baseIndex: Int = 0
+    @State private var bases: [String] = []
+    @State private var importIndex: Int = 0
+    @State private var importProfile: [String] = []
     @State private var addDisabled: Bool = true
     @State private var showBasesAndImport: Bool = false
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
+    @State private var alertDismiss: String = ""
+    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -77,25 +84,43 @@ struct AddProfileView: View {
                         self.pwdIsFocused = true
                     })
                     .disabled(self.pwdDisabled)
-                
-                Button(action: populateBasesAndImport) {
-                    Text("Continuer".uppercased())
-                        .frame(minWidth: 0, maxWidth: 150, minHeight: 0, maxHeight: 50, alignment: .center)
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
-                        .cornerRadius(5)
-                        .disabled(true)
-                        .padding(.bottom, 10)
+                if !self.showBasesAndImport {
+                    Button(action: populateBasesAndImport) {
+                        Text("Continuer".uppercased())
+                            .frame(minWidth: 0, maxWidth: 150, minHeight: 0, maxHeight: 50, alignment: .center)
+                            .foregroundColor(Color.white)
+                            .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
+                            .cornerRadius(5)
+                            .disabled(true)
+                            .padding(.bottom, 10)
+                    }
+                    .simultaneousGesture(TapGesture().onEnded {
+                        self.pwdIsFocused = false
+                    })
                 }
-                .simultaneousGesture(TapGesture().onEnded {
-                    self.pwdIsFocused = false
-                })
             }
             
             if self.showBasesAndImport {
                 VStack {
-                    Text("Bonjour")
+                    Picker(selection: $baseIndex, label: Text("Bases").foregroundColor(Color.white)) {
+                        ForEach(0 ..< bases.count) {
+                            Text(self.bases[$0]).tag($0)
+                                .foregroundColor(Color.white)
+                        }
+                    }
+                    .frame(minWidth: 0, maxWidth: 620, minHeight: 0, maxHeight: 30)
+                    .padding(.bottom, 100)
+                    .padding(.top, 10)
+                    
+                    Picker(selection: $importIndex, label: Text("Profils d'import").foregroundColor(Color.white)) {
+                        ForEach(0 ..< importProfile.count) {
+                            Text(self.importProfile[$0]).tag($0)
+                                .foregroundColor(Color.white)
+                        }
+                    }
+                    .frame(minWidth: 0, maxWidth: 620, minHeight: 0, maxHeight: 30)
                 }
+                .colorMultiply(.white)
             }
                         
             Spacer()
@@ -132,8 +157,8 @@ struct AddProfileView: View {
         Image("ajaris_background_alt")
             .resizable())
         .font(.system(size: 15))
-        .alert(isPresented: $pwdDisabled) {
-            Alert(title: Text("Hello SwiftUI!"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text(alertDismiss)))
         }
     }
     
@@ -149,7 +174,7 @@ struct AddProfileView: View {
         }
         RequestAPI.checkUrl(url: self.url) { (result) -> () in
             if(result.isEmpty) {
-                Alert(title: Text("URL incorrecte"), message: Text("Veuillez saisir une autre URL."), dismissButton: .default(Text("OK")))
+                self.showAlertMessage(title: "URL incorrecte", message: "Veuillez saisir une autre URL.", dismiss: "OK")
                 return
             }
             self.lastDocument = XMLProcessing(data: result)!
@@ -157,20 +182,44 @@ struct AddProfileView: View {
                 self.loginDisabled = false
                 self.pwdDisabled = false
             } else {
-                Alert(title: Text("URL incorrecte"), message: Text("Veuillez saisir une autre URL."), dismissButton: .default(Text("OK")))
+                self.showAlertMessage(title: "URL incorrecte", message: "Veuillez saisir une autre URL.", dismiss: "OK")
                 self.login = ""
                 self.pwd = ""
                 self.loginDisabled = true
                 self.pwdDisabled = true
+                self.showBasesAndImport = false
             }
         }
     }
     
     private func addProfile() {
-        // TODO
+        if(self.lastDocument.getResults()![0]["sessionid"] != nil) {
+            RequestAPI.login(url: self.url, login: self.login, pwd: self.pwd) { (result) -> () in
+                if(result.isEmpty) {
+                    return
+                }
+                self.lastDocument = XMLProcessing(data: result)!
+                if(self.lastDocument.getBases() != self.bases || self.lastDocument.getImports() != self.importProfile ) {
+                    self.bases = self.lastDocument.getBases()
+                    self.importProfile = self.lastDocument.getImports()
+                    self.showAlertMessage(title: "Paramètres invalides", message: "Veuillez renseigner à nouveau votre base ainsi que votre profil d'import.", dismiss: "OK")
+                }
+                RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!)
+                let profiles = ProfilePreferences.getPreferences()
+                let id = self.newId(profiles: profiles)
+                ProfilePreferences.addPreferences(profile: Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex]))
+                //TODO: implement logout callback
+                self.mode.wrappedValue.dismiss()
+            }
+        } else {
+            self.mode.wrappedValue.dismiss()
+        }
     }
     
     private func cancelProfile() {
+        if(self.lastDocument.getResults() != nil && self.lastDocument.getResults()![0]["sessionid"] != nil) {
+            RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!)
+        }
         self.mode.wrappedValue.dismiss()
     }
     
@@ -181,21 +230,42 @@ struct AddProfileView: View {
         }
         RequestAPI.login(url: self.url, login: self.login, pwd: self.pwd) { (result) -> () in
             if(result.isEmpty) {
-                Alert(title: Text("Identifiants incorrects"), message: Text("Pseudo ou mot de passe incorrect."), dismissButton: .default(Text("OK")))
+                self.showAlertMessage(title: "Identifiants incorrects", message: "Veuillez renseigner de nouveaux identifiants.", dismiss: "OK")
                 return
             }
             self.lastDocument = XMLProcessing(data: result)!
             if(self.lastDocument.getResults()![0]["error-code"] == "0") {
-                // TODO: populate
+                self.bases = self.lastDocument.getBases()
+                self.importProfile = self.lastDocument.getImports()
                 self.addDisabled = false
+                self.loginDisabled = true
+                self.pwdDisabled = true
                 self.showBasesAndImport = true
             } else {
-                // TODO: display message 'Identifiants incorrects'
-                Alert(title: Text("Identifiants incorrects"), message: Text("Pseudo ou mot de passe incorrect."), dismissButton: .default(Text("OK")))
+                self.showAlertMessage(title: "Identifiants incorrects", message: "Veuillez renseigner de nouveaux identifiants.", dismiss: "OK")
                 self.addDisabled = true
+                self.loginDisabled = false
+                self.pwdDisabled = false
                 self.showBasesAndImport = false
             }
         }
+    }
+    
+    private func showAlertMessage(title: String, message: String, dismiss: String) {
+        self.alertTitle = title
+        self.alertMessage = message
+        self.alertDismiss = dismiss
+        self.showAlert = true
+    }
+    
+    private func newId(profiles: [Profile]) -> Int {
+        var id = 0
+        for var profile in profiles {
+            if(profile.getId() > id) {
+                id = profile.getId()
+            }
+        }
+        return id + 1
     }
 }
 
