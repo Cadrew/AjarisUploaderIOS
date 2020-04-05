@@ -31,6 +31,8 @@ struct AddProfileView: View {
     @State private var alertDismiss: String = ""
     @State private var showAlert: Bool = false
     
+    @Binding var profiles: [Profile]
+    
     var body: some View {
         VStack {
             Spacer()
@@ -162,8 +164,14 @@ struct AddProfileView: View {
         }
     }
     
+    init(_ profiles: Binding<[Profile]>) {
+        UITableView.appearance().backgroundColor = .clear
+        self._profiles = profiles
+    }
+
     init() {
         UITableView.appearance().backgroundColor = .clear
+        self._profiles = Binding.constant([Profile()])
     }
     
     private func checkUrl() {
@@ -208,7 +216,9 @@ struct AddProfileView: View {
                 RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
                     let profiles = ProfilePreferences.getPreferences()
                     let id = self.newId(profiles: profiles)
-                    ProfilePreferences.addPreferences(profile: Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex]))
+                    let profile = Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex])
+                    self.profiles.append(profile)
+                    ProfilePreferences.addPreferences(profile: profile)
                     DispatchQueue.main.async {
                         self.mode.wrappedValue.dismiss()
                     }

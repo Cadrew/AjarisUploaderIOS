@@ -39,7 +39,7 @@ struct ProfileView: View {
                 .padding()
                 .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
                 
-                NavigationLink(destination: AddProfileView(), isActive: $addProfileActive) {
+                NavigationLink(destination: AddProfileView($profiles), isActive: $addProfileActive) {
                     Text("")
                 }
             }
