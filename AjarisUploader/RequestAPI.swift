@@ -56,18 +56,22 @@ class RequestAPI {
         task.resume()
     }
     
-    public static func logout(url: String, sessionid: String) {
+    public static func logout(url: String, sessionid: String, finished: @escaping ()->()) {
         let urlRequest = URL(string: url + RequestAPI.UPLOGOUT + "?jessionid=" + sessionid)!
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if error != nil || data == nil {
                 print("Client error!")
+                finished()
                 return
             }
 
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 print("Server error!")
+                finished()
                 return
             }
+            
+            finished()
         }
 
         task.resume()

@@ -58,14 +58,6 @@ struct ProfileView: View {
         
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .foregroundColor: UIColor.white]*/
-        
-        /** For tests purpose **/
-        // TODO: Remove
-        ProfilePreferences.removeAllPreferences()
-        ProfilePreferences.addPreferences(profile: Profile(id: 0, name: "Adrien CANINO", login: "mistale", pwd: "", url: "", base: Base(), importProfile: ""))
-        ProfilePreferences.addPreferences(profile: Profile(id: 1, name: "Alexandre DO-O ALMEIDA", login: "mistale", pwd: "", url: "", base: Base(), importProfile: ""))
-        self.profiles = ProfilePreferences.getPreferences()
-        /******************/
     }
     
     private func delete(with indexSet: IndexSet) {

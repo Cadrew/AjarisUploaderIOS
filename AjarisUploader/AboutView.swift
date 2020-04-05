@@ -10,18 +10,24 @@ import SwiftUI
 import StoreKit
 
 struct AboutView: View {
+    @State private var version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+    
     var body: some View {
         VStack {
             Spacer()
             
-            Text("Ajaris UpLoader version 1.0.0")
-                .font(.system(size: 20))
+            HStack(spacing: 0) {
+                Text("Ajaris UpLoader version ")
+                    .font(.system(size: 20))
+                Text((self.version ?? "1") as String + ".")
+                    .font(.system(size: 20))
+            }
             
             HStack(spacing: 0) {
                 Text("Ajaris est un produit ")
                     .font(.system(size: 20))
                 
-                Button("orkis.com") {
+                Button("https://www.orkis.com") {
                     if let url = URL(string: "https://www.orkis.com") {
                         UIApplication.shared.open(url)
                     }

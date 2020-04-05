@@ -193,7 +193,7 @@ struct AddProfileView: View {
     }
     
     private func addProfile() {
-        if(self.lastDocument.getResults()![0]["sessionid"] != nil) {
+        if(self.lastDocument.getResults() != nil && self.lastDocument.getResults()![0]["sessionid"] != nil) {
             RequestAPI.login(url: self.url, login: self.login, pwd: self.pwd) { (result) -> () in
                 if(result.isEmpty) {
                     return
@@ -203,13 +203,17 @@ struct AddProfileView: View {
                     self.bases = self.lastDocument.getBases()
                     self.importProfile = self.lastDocument.getImports()
                     self.showAlertMessage(title: "Paramètres invalides", message: "Veuillez renseigner à nouveau votre base ainsi que votre profil d'import.", dismiss: "OK")
+                    return
                 }
-                RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!)
-                let profiles = ProfilePreferences.getPreferences()
-                let id = self.newId(profiles: profiles)
-                ProfilePreferences.addPreferences(profile: Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex]))
-                //TODO: implement logout callback
-                self.mode.wrappedValue.dismiss()
+                RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
+                    let profiles = ProfilePreferences.getPreferences()
+                    let id = self.newId(profiles: profiles)
+                    ProfilePreferences.addPreferences(profile: Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex]))
+                    DispatchQueue.main.async {
+                        self.mode.wrappedValue.dismiss()
+                    }
+                    
+                }
             }
         } else {
             self.mode.wrappedValue.dismiss()
@@ -218,9 +222,14 @@ struct AddProfileView: View {
     
     private func cancelProfile() {
         if(self.lastDocument.getResults() != nil && self.lastDocument.getResults()![0]["sessionid"] != nil) {
-            RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!)
+            RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
+                DispatchQueue.main.async {
+                    self.mode.wrappedValue.dismiss()
+                }                               
+            }
+        } else {
+            self.mode.wrappedValue.dismiss()
         }
-        self.mode.wrappedValue.dismiss()
     }
     
     private func populateBasesAndImport() {
@@ -260,7 +269,7 @@ struct AddProfileView: View {
     
     private func newId(profiles: [Profile]) -> Int {
         var id = 0
-        for var profile in profiles {
+        for profile in profiles {
             if(profile.getId() > id) {
                 id = profile.getId()
             }
