@@ -48,7 +48,6 @@ struct ProfileView: View {
                 .resizable())
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            
         }
     }
     

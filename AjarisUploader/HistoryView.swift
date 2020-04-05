@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @State private var contributions: [Contribution] = UploadPreferences.getPreferences()
+    
     var body: some View {
-        Text("History")
+        VStack{
+            Form {
+                ForEach(contributions, id: \.id) { contribution in
+                    ContributionCards(name: String(contribution.getId()))
+                        .background(Color.gray.opacity(0.15))
+                }
+            }
+            .background(Color.white.opacity(0))
+                
+            Spacer()
+        }
+        .background(
+        Image("ajaris_background")
+            .resizable())
+    }
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
     }
 }
 

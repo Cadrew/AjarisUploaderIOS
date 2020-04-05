@@ -9,7 +9,7 @@
 import Foundation
 
 class Contribution: Codable {
-    private var id: Int = -1
+    public var id: Int = -1
     private var uploads: [Upload] = []
     
     init() {
