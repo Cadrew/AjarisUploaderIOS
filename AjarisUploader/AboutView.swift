@@ -19,9 +19,11 @@ struct AboutView: View {
             HStack(spacing: 0) {
                 Text("Ajaris UpLoader version ")
                     .font(.system(size: 20))
+                
                 Text((self.version ?? "1") as String + ".")
                     .font(.system(size: 20))
             }
+            .padding(.bottom, 10)
             
             HStack(spacing: 0) {
                 Text("Ajaris est un produit ")
