@@ -32,6 +32,8 @@
 		07A068F9243A47AB009F6B3A /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A068F8243A47AB009F6B3A /* Contribution.swift */; };
 		07A068FB243A49DB009F6B3A /* UploadPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A068FA243A49DB009F6B3A /* UploadPreferences.swift */; };
 		07A068FD243A50B1009F6B3A /* ContributionCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A068FC243A50B1009F6B3A /* ContributionCards.swift */; };
+		07C29BBE243B0C2F0098447E /* HistoryDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C29BBD243B0C2F0098447E /* HistoryDialog.swift */; };
+		07C29BC0243B11970098447E /* UploadCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C29BBF243B11970098447E /* UploadCards.swift */; };
 		5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F323F43242F74FE00353988 /* ShareViewController.swift */; };
 		5F323F47242F74FE00353988 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F323F45242F74FE00353988 /* MainInterface.storyboard */; };
 		5F323F4B242F74FE00353988 /* AjarisUploaderShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F323F41242F74FE00353988 /* AjarisUploaderShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -111,6 +113,8 @@
 		07A068F8243A47AB009F6B3A /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		07A068FA243A49DB009F6B3A /* UploadPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPreferences.swift; sourceTree = "<group>"; };
 		07A068FC243A50B1009F6B3A /* ContributionCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionCards.swift; sourceTree = "<group>"; };
+		07C29BBD243B0C2F0098447E /* HistoryDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDialog.swift; sourceTree = "<group>"; };
+		07C29BBF243B11970098447E /* UploadCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCards.swift; sourceTree = "<group>"; };
 		12EDEB0BCD3630FE5CD08523 /* Pods-AjarisUploaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3ED4F9752D6A72FE3160607D /* Pods_AjarisUploaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503A5C00EB2E6B8AAF5D932F /* Pods-AjarisUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				07A068F8243A47AB009F6B3A /* Contribution.swift */,
 				07A068FA243A49DB009F6B3A /* UploadPreferences.swift */,
 				07A068FC243A50B1009F6B3A /* ContributionCards.swift */,
+				07C29BBD243B0C2F0098447E /* HistoryDialog.swift */,
+				07C29BBF243B11970098447E /* UploadCards.swift */,
 			);
 			path = AjarisUploader;
 			sourceTree = "<group>";
@@ -591,9 +597,11 @@
 				077A419C242914FD0027B495 /* AppDelegate.swift in Sources */,
 				079DA6C8242A262A00D9BA03 /* Profile.swift in Sources */,
 				078AAB03242DEA8400E4CEA5 /* RequestAPI.swift in Sources */,
+				07C29BC0243B11970098447E /* UploadCards.swift in Sources */,
 				079DA6B6242A095000D9BA03 /* HistoryView.swift in Sources */,
 				077A41A0242915B40027B495 /* ContentView.swift in Sources */,
 				077A419A2429119C0027B495 /* AboutViewController.swift in Sources */,
+				07C29BBE243B0C2F0098447E /* HistoryDialog.swift in Sources */,
 				072A2CB2242A880100C0BBF9 /* Base.swift in Sources */,
 				079DA6B8242A09E100D9BA03 /* AboutView.swift in Sources */,
 				077A4196242910510027B495 /* ProfileViewController.swift in Sources */,

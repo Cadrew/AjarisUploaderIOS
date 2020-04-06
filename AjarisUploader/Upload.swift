@@ -9,19 +9,22 @@
 import Foundation
 
 class Upload: Codable {
+    public var id: Int = -1
     private var file: String = ""
     private var comment: String = ""
     private var profile: Profile = Profile()
     private var date: Date = Date()
     
     init() {
+        self.id = -1
         self.file = ""
         self.comment = ""
         self.profile = Profile()
         self.date = Date()
     }
     
-    init(file: String, comment: String, profile: Profile, date: Date) {
+    init(id: Int, file: String, comment: String, profile: Profile, date: Date) {
+        self.id = id
         self.file = file
         self.comment = comment
         self.profile = profile
@@ -29,11 +32,20 @@ class Upload: Codable {
     }
     
     public func isEmpty() -> Bool {
-        return self.file == "" && self.comment == "" && self.profile.isEmpty()
+        return self.id == -1 && self.file == "" && self.comment == "" && self.profile.isEmpty()
+    }
+    
+    public func getId() -> Int {
+        return self.id
     }
     
     public func getFile() -> String {
         return self.file
+    }
+    
+    public func getFileName() -> String {
+        var path = self.file.components(separatedBy: "/")
+        return path.popLast() ?? ""
     }
     
     public func getComment() -> String {
@@ -46,5 +58,11 @@ class Upload: Codable {
     
     public func getDate() -> Date {
         return self.date
+    }
+    
+    public func getDisplayDate() -> String {
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+        return dateFormatterPrint.string(from: self.date)
     }
 }

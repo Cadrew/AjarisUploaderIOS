@@ -9,23 +9,29 @@
 import SwiftUI
 
 struct ContributionCards: View {
-    var name: String
+    var contribution: Contribution
+    @State private var showDialog = false
     
     var body: some View {
         VStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(name)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                        .lineLimit(3)
+            Button(action: openHistoryDialog) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(String(contribution.getId()))
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                            .lineLimit(3)
+                    }
+                    .layoutPriority(100)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .topLeading)
+                    
+                    Image("icon_ajaris")
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 }
-                .layoutPriority(100)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .topLeading)
-                
-                Image("icon_ajaris")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+            }.sheet(isPresented: $showDialog) {
+                HistoryDialog(contribution: self.contribution, showDialog: self.$showDialog)
             }
         .padding()
         }
@@ -35,10 +41,14 @@ struct ContributionCards: View {
                 .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
         )
     }
+    
+    private func openHistoryDialog() {
+        self.showDialog.toggle()
+    }
 }
 
 struct ContributionCards_Previews: PreviewProvider {
     static var previews: some View {
-        ContributionCards(name: "")
+        ContributionCards(contribution: Contribution())
     }
 }
