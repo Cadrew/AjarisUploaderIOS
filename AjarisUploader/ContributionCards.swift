@@ -33,7 +33,7 @@ struct ContributionCards: View {
             }.sheet(isPresented: $showDialog) {
                 HistoryDialog(contribution: self.contribution, showDialog: self.$showDialog)
             }
-        .padding()
+            .padding()
         }
         .cornerRadius(10)
         .overlay(

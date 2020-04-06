@@ -55,6 +55,6 @@ struct UploadCards: View {
 
 struct UploadCards_Previews: PreviewProvider {
     static var previews: some View {
-        UploadCards(upload: Upload(id: 0, file: "test.png", comment: "test comment", profile: Profile(id: 0, name: "Mistale", login: "mistale", pwd: "software", url: "", base: Base(), importProfile: ""), date: Date()))
+        UploadCards(upload: Upload())
     }
 }

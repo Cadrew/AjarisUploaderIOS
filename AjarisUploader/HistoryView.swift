@@ -33,7 +33,7 @@ struct HistoryView: View {
         /** For test purposes **/
         // TODO: remove
         let upload = Upload(id: 0, file: "test.png", comment: "test comment", profile: Profile(id: 0, name: "Cadrew", login: "mistale", pwd: "software", url: "url", base: Base(), importProfile: "import"), date: Date())
-        var uploads = [Upload()]
+        var uploads = [Upload(id: 0, file: "test.png", comment: "test comment", profile: Profile(id: 0, name: "Cadrew", login: "mistale", pwd: "software", url: "url", base: Base(), importProfile: "import"), date: Date())]
         uploads.append(upload)
         let contribution = Contribution(id: 1245, uploads: uploads)
         UploadPreferences.removeAllPreferences()

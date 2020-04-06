@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070A0407243B712E001FDCC7 /* ProfileDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0406243B712E001FDCC7 /* ProfileDialog.swift */; };
 		072A2CB2242A880100C0BBF9 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB1242A880100C0BBF9 /* Base.swift */; };
 		072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */; };
 		077A416A242906AF0027B495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077A4169242906AF0027B495 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070A0406243B712E001FDCC7 /* ProfileDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDialog.swift; sourceTree = "<group>"; };
 		072A2CB1242A880100C0BBF9 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
 		077A4160242906AD0027B495 /* AjarisUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjarisUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,7 @@
 				07A068FC243A50B1009F6B3A /* ContributionCards.swift */,
 				07C29BBD243B0C2F0098447E /* HistoryDialog.swift */,
 				07C29BBF243B11970098447E /* UploadCards.swift */,
+				070A0406243B712E001FDCC7 /* ProfileDialog.swift */,
 			);
 			path = AjarisUploader;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 			files = (
 				072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */,
 				077A419C242914FD0027B495 /* AppDelegate.swift in Sources */,
+				070A0407243B712E001FDCC7 /* ProfileDialog.swift in Sources */,
 				079DA6C8242A262A00D9BA03 /* Profile.swift in Sources */,
 				078AAB03242DEA8400E4CEA5 /* RequestAPI.swift in Sources */,
 				07C29BC0243B11970098447E /* UploadCards.swift in Sources */,

@@ -17,7 +17,7 @@ struct ProfileView: View {
             VStack {
                 Form {
                     ForEach(profiles, id: \.id) { profile in
-                        ProfileCards(name: profile.getName(), login: profile.getLogin())
+                        ProfileCards(profile: profile)
                             .background(Color.gray.opacity(0.15))
                     }
                     .onDelete(perform: delete)
