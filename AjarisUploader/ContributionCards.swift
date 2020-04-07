@@ -28,7 +28,7 @@ struct ContributionCards: View {
                     Image("icon_ajaris")
                         .renderingMode(.original)
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 25, height: 25)
                 }
             }.sheet(isPresented: $showDialog) {
                 HistoryDialog(contribution: self.contribution, showDialog: self.$showDialog)

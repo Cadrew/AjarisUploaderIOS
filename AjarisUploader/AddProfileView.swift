@@ -11,6 +11,7 @@ import SwiftUI
 struct AddProfileView: View {
     @State private var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
     @State private var url: String = ""
+    @State private var previousUrl: String = ""
     @State private var name: String = ""
     @State private var login: String = ""
     @State private var loginDisabled: Bool = true
@@ -35,6 +36,22 @@ struct AddProfileView: View {
     
     var body: some View {
         VStack {
+            Button(action: cancelProfile) {
+                HStack(spacing: 0) {
+                    Image("back_arrow")
+                        .resizable()
+                        .foregroundColor(Color.white)
+                        .frame(width: 13, height: 22)
+                    
+                    Text("  Retour")
+                        .foregroundColor(Color.white)
+                    
+                    Spacer()
+                }
+                .font(.system(size: 20))
+            }
+            .padding(10)
+            
             Spacer()
             
             Image("logo_uploader_alt")
@@ -45,8 +62,10 @@ struct AddProfileView: View {
             Spacer()
             
             VStack {
-                TextField("URL", text: $url, onEditingChanged: {_ in 
-                    self.checkUrl()
+                TextField("URL", text: $url, onEditingChanged: {_ in
+                    if(self.previousUrl != self.url) {
+                        self.checkUrl()
+                    }
                 })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .simultaneousGesture(TapGesture().onEnded {
@@ -86,6 +105,7 @@ struct AddProfileView: View {
                         self.pwdIsFocused = true
                     })
                     .disabled(self.pwdDisabled)
+                
                 if !self.showBasesAndImport {
                     Button(action: populateBasesAndImport) {
                         Text("Continuer".uppercased())
@@ -181,6 +201,7 @@ struct AddProfileView: View {
             return
         }
         RequestAPI.checkUrl(url: self.url) { (result) -> () in
+            self.previousUrl = self.url
             if(result.isEmpty) {
                 self.showAlertMessage(title: "URL incorrecte", message: "Veuillez saisir une autre URL.", dismiss: "OK")
                 return
