@@ -11,6 +11,8 @@ import SwiftUI
 struct ProfileCards: View {
     var profile: Profile
     @State private var showDialog = false
+    @Binding var addProfileActive: Bool
+    @Binding var editProfile: Profile
     
     var body: some View {
         VStack {
@@ -34,7 +36,7 @@ struct ProfileCards: View {
                         .frame(width: 25, height: 25)
                 }
             }.sheet(isPresented: $showDialog) {
-                ProfileDialog(profile: self.profile, showDialog: self.$showDialog)
+                ProfileDialog(profile: self.profile, showDialog: self.$showDialog, addProfileActive: self.$addProfileActive, editProfile: self.$editProfile)
             }
             .padding()
         }
@@ -52,6 +54,6 @@ struct ProfileCards: View {
 
 struct ProfileCards_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileCards(profile: Profile())
+        ProfileCards(profile: Profile(), addProfileActive: Binding.constant(false), editProfile: Binding.constant(Profile()))
     }
 }

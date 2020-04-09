@@ -31,6 +31,9 @@ struct AddProfileView: View {
     @State private var alertMessage: String = ""
     @State private var alertDismiss: String = ""
     @State private var showAlert: Bool = false
+    @State private var addText: String = "Ajouter le profil"
+    @State private var isEdit : Bool = false
+    @State private var profileId : Int = -1
     
     @Binding var profiles: [Profile]
     
@@ -149,7 +152,7 @@ struct AddProfileView: View {
             
             VStack {
                 Button(action: addProfile) {
-                    Text("Ajouter le profil".uppercased())
+                    Text(self.addText.uppercased())
                         .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
                         .foregroundColor(Color.white)
                         .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
@@ -182,6 +185,20 @@ struct AddProfileView: View {
         .alert(isPresented: $showAlert) {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text(alertDismiss)))
         }
+    }
+    
+    init(profile: Profile,_ profiles: Binding<[Profile]>) {
+        UITableView.appearance().backgroundColor = .clear
+        self._profiles = profiles
+        self._addText = State(initialValue: "Éditer le profil")
+        self._url = State(initialValue: profile.getUrl())
+        self._previousUrl = State(initialValue: profile.getUrl())
+        self._name = State(initialValue: profile.getName())
+        self._login = State(initialValue: profile.getLogin())
+        self._profileId = State(initialValue: profile.getId())
+        self._isEdit = State(initialValue: true)
+        self._pwdDisabled = State(initialValue: false)
+        self._loginDisabled = State(initialValue: false)
     }
     
     init(_ profiles: Binding<[Profile]>) {
@@ -236,10 +253,19 @@ struct AddProfileView: View {
                 }
                 RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
                     let profiles = ProfilePreferences.getPreferences()
-                    let id = self.newId(profiles: profiles)
+                    let id = self.profileId == -1 ? self.newId(profiles: profiles) : self.profileId
                     let profile = Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex])
-                    self.profiles.append(profile)
-                    ProfilePreferences.addPreferences(profile: profile)
+                    if(self.isEdit) {
+                        for i in 0...self.profiles.count-1 {
+                            if(self.profiles[i].getId() == profile.getId()) {
+                                self.profiles[i] = profile
+                            }
+                        }
+                        ProfilePreferences.savePreferences(profiles: self.profiles)
+                    } else {
+                        self.profiles.append(profile)
+                        ProfilePreferences.addPreferences(profile: profile)
+                    }
                     DispatchQueue.main.async {
                         self.mode.wrappedValue.dismiss()
                     }

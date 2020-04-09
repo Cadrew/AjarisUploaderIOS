@@ -11,13 +11,14 @@ import SwiftUI
 struct ProfileView: View {
     @State private var profiles = ProfilePreferences.getPreferences()
     @State private var addProfileActive: Bool = false
+    @State private var editProfile : Profile = Profile()
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
                     ForEach(profiles, id: \.id) { profile in
-                        ProfileCards(profile: profile)
+                        ProfileCards(profile: profile, addProfileActive: self.$addProfileActive, editProfile: self.$editProfile)
                             .background(Color.gray.opacity(0.15))
                     }
                     .onDelete(perform: delete)
@@ -39,7 +40,7 @@ struct ProfileView: View {
                 .padding()
                 .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 0)
                 
-                NavigationLink(destination: AddProfileView($profiles), isActive: $addProfileActive) {
+                NavigationLink(destination: editProfile.isEmpty() ? AddProfileView($profiles) : AddProfileView(profile: self.editProfile, $profiles), isActive: $addProfileActive) {
                     Text("")
                 }
             }

@@ -11,6 +11,8 @@ import SwiftUI
 struct ProfileDialog: View {
     @State var profile: Profile
     @Binding var showDialog: Bool
+    @Binding var addProfileActive: Bool
+    @Binding var editProfile: Profile
     
     var body: some View {
         VStack {
@@ -70,16 +72,25 @@ struct ProfileDialog: View {
             
             Spacer()
             
-            Button("Retour") {
-                self.showDialog.toggle()
+            HStack {
+                Button("Éditer") {
+                    self.showDialog.toggle()
+                    self.addProfileActive.toggle()
+                    self.editProfile = self.profile
+                }
+                .padding(10)
+                
+                Button("Retour") {
+                    self.showDialog.toggle()
+                }
+                .padding(10)
             }
-            .padding(10)
         }
     }
 }
 
 struct ProfileDialog_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileDialog(profile: Profile(), showDialog: .constant(true))
+        ProfileDialog(profile: Profile(), showDialog: Binding.constant(true), addProfileActive: Binding.constant(false), editProfile: Binding.constant(Profile()))
     }
 }
