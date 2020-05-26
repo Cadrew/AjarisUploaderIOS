@@ -15,8 +15,10 @@ class XMLProcessing: NSObject, XMLParserDelegate {
 
     private var results: [[String: String]]?
     private var currentDictionary: [String: String]?
+    private var currentAttributes: [String: String]?
     private var currentValue: String?
     private var bases: [String] = []
+    private var basesNum: [Int] = []
     private var imports: [String] = []
     
     private let separator: String = "@xml"
@@ -26,7 +28,7 @@ class XMLProcessing: NSObject, XMLParserDelegate {
         super.init()
         var dataString = String(data: data, encoding: .utf8)?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         // TODO: remove test
-        // dataString = "<result><error-code>0</error-code><error-message></error-message><sessionid>69D52E170930DEF8B6D4B4FDDC2B8BBF</sessionid><ptoken>1Na-Tt-28qqZDlFWWYAgD959yuuCYNVhqii7gHzcePMph243wCkRBxBg6lknppROqn9xJ6VpW0ABAVT0yEeorZpKtRtO80OXdJjdn4jFzact0I</ptoken><webapp-version>6.3.0-20056</webapp-version><bases><name num=\"7\">7 - Test</name><name num=\"7\">8 - Test</name><name num=\"6\">6 - Generique</name></bases><imports><name>Defaut</name></imports><uploadmaxfilesize>5000M</uploadmaxfilesize></result>"
+        //dataString = "<result><error-code>0</error-code><error-message></error-message><sessionid>69D52E170930DEF8B6D4B4FDDC2B8BBF</sessionid><ptoken>1Na-Tt-28qqZDlFWWYAgD959yuuCYNVhqii7gHzcePMph243wCkRBxBg6lknppROqn9xJ6VpW0ABAVT0yEeorZpKtRtO80OXdJjdn4jFzact0I</ptoken><webapp-version>6.3.0-20056</webapp-version><bases><name num=\"7\">7 - Test</name><name num=\"7\">8 - Test</name><name num=\"6\">6 - Generique</name></bases><imports><name>Defaut</name></imports><uploadmaxfilesize>5000M</uploadmaxfilesize></result>"
         print(dataString ?? "Failed")
         guard let xmlData = dataString?.data(using: .utf8) else { return nil }
         let parser = XMLParser(data: xmlData)
@@ -49,6 +51,9 @@ class XMLProcessing: NSObject, XMLParserDelegate {
             currentDictionary = [:]
         } else if dictionaryKeys.contains(elementName) {
             currentValue = ""
+        }
+        if attributeDict.count != 0 && elementName == "name" && (attributeDict["num"] != nil) {
+            basesNum.append(Int(attributeDict["num"] ?? "") ?? 0)
         }
     }
 
@@ -98,6 +103,10 @@ class XMLProcessing: NSObject, XMLParserDelegate {
     public func getImports() -> [String] {
         return self.imports
     }
+    
+    public func getBasesNum() -> [Int] {
+           return self.basesNum
+       }
     
     private func cleanResult() {
         if(results == nil) {

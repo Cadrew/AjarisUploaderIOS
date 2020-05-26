@@ -21,6 +21,7 @@ struct AddProfileView: View {
     @State private var pwdDisabled: Bool = true
     @State private var baseIndex: Int = 0
     @State private var bases: [String] = []
+    @State private var basesNum: [Int] = []
     @State private var importIndex: Int = 0
     @State private var importProfile: [String] = []
     @State private var addDisabled: Bool = true
@@ -249,6 +250,7 @@ struct AddProfileView: View {
                     self.bases[self.baseIndex] == XMLProcessing.DefaultField ||
                     self.importProfile[self.importIndex] == XMLProcessing.DefaultField) {
                     self.bases = self.lastDocument.getBases()
+                    self.basesNum = self.lastDocument.getBasesNum()
                     self.importProfile = self.lastDocument.getImports()
                     self.showAlertMessage(title: "Paramètres invalides", message: "Veuillez renseigner à nouveau votre base ainsi que votre profil d'import.", dismiss: "OK")
                     return
@@ -256,7 +258,7 @@ struct AddProfileView: View {
                 RequestAPI.logout(url: self.url, sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
                     let profiles = ProfilePreferences.getPreferences()
                     let id = self.profileId == -1 ? self.newId(profiles: profiles) : self.profileId
-                    let profile = Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: 0, label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex])
+                    let profile = Profile(id: id, name: self.name, login: self.login, pwd: self.pwd, url: self.url, base: Base(id: self.basesNum[self.baseIndex], label: self.bases[self.baseIndex]), importProfile: self.importProfile[self.importIndex])
                     if(self.isEdit) {
                         for i in 0...self.profiles.count-1 {
                             if(self.profiles[i].getId() == profile.getId()) {
@@ -304,6 +306,7 @@ struct AddProfileView: View {
             self.lastDocument = XMLProcessing(data: result)!
             if(self.lastDocument.getResults()![0]["error-code"] == "0") {
                 self.bases = self.lastDocument.getBases()
+                self.basesNum = self.lastDocument.getBasesNum()
                 self.importProfile = self.lastDocument.getImports()
                 self.addDisabled = false
                 self.loginDisabled = true
