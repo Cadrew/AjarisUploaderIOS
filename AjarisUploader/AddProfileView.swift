@@ -39,48 +39,39 @@ struct AddProfileView: View {
     @Binding var profiles: [Profile]
     
     var body: some View {
-        VStack {
-            Button(action: cancelProfile) {
-                HStack(spacing: 0) {
-                    Image("back_arrow")
-                        .resizable()
-                        .foregroundColor(Color.white)
-                        .frame(width: 13, height: 22)
-                    
-                    Text("  Retour")
-                        .foregroundColor(Color.white)
-                    
-                    Spacer()
-                }
-                .font(.system(size: 20))
-            }
-            .padding(10)
-            
-            Spacer()
-            
-            Image("logo_uploader_alt")
-                .resizable()
-                .frame(width: 120, height: 33)
-                .padding()
-            
-            Spacer()
-            
+        NavigationView {
             VStack {
-                TextField("URL", text: $url, onEditingChanged: {_ in
-                    if(self.previousUrl != self.url) {
-                        self.checkUrl()
+                Button(action: cancelProfile) {
+                    HStack(spacing: 0) {
+                        Image("back_arrow")
+                            .resizable()
+                            .foregroundColor(Color.white)
+                            .frame(width: 13, height: 22)
+                        
+                        Text("  Retour")
+                            .foregroundColor(Color.white)
+                        
+                        Spacer()
                     }
-                })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .simultaneousGesture(TapGesture().onEnded {
-                    if(self.pwdIsFocused && self.pwd != self.previousPwd) {
-                        self.previousPwd = self.pwd
-                        self.populateBasesAndImport()
-                    }
-                    self.pwdIsFocused = false
-                })
+                    .font(.system(size: 20))
+                }
+                .padding(10)
                 
-                TextField("Nom", text: $name)
+                Spacer()
+                
+                Image("logo_uploader_alt")
+                    .resizable()
+                    .frame(width: 120, height: 33)
+                    .padding()
+                
+                Spacer()
+                
+                VStack {
+                    TextField("URL", text: $url, onEditingChanged: {_ in
+                        if(self.previousUrl != self.url) {
+                            self.checkUrl()
+                        }
+                    })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .simultaneousGesture(TapGesture().onEnded {
                         if(self.pwdIsFocused && self.pwd != self.previousPwd) {
@@ -89,102 +80,112 @@ struct AddProfileView: View {
                         }
                         self.pwdIsFocused = false
                     })
-                
-                TextField("Pseudo", text: $login, onEditingChanged: {_ in
-                    self.populateBasesAndImport()
-                })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .simultaneousGesture(TapGesture().onEnded {
-                    if(self.pwdIsFocused && self.pwd != self.previousPwd) {
-                        self.previousPwd = self.pwd
+                    
+                    TextField("Nom", text: $name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .simultaneousGesture(TapGesture().onEnded {
+                            if(self.pwdIsFocused && self.pwd != self.previousPwd) {
+                                self.previousPwd = self.pwd
+                                self.populateBasesAndImport()
+                            }
+                            self.pwdIsFocused = false
+                        })
+                    
+                    TextField("Pseudo", text: $login, onEditingChanged: {_ in
                         self.populateBasesAndImport()
-                    }
-                    self.pwdIsFocused = false
-                })
-                .disabled(self.loginDisabled)
-                
-                SecureField("Mot de passe", text: $pwd)
+                    })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .simultaneousGesture(TapGesture().onEnded {
-                        self.pwdIsFocused = true
+                        if(self.pwdIsFocused && self.pwd != self.previousPwd) {
+                            self.previousPwd = self.pwd
+                            self.populateBasesAndImport()
+                        }
+                        self.pwdIsFocused = false
                     })
-                    .disabled(self.pwdDisabled)
+                    .disabled(self.loginDisabled)
+                    
+                    SecureField("Mot de passe", text: $pwd)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .simultaneousGesture(TapGesture().onEnded {
+                            self.pwdIsFocused = true
+                        })
+                        .disabled(self.pwdDisabled)
+                    
+                    if !self.showBasesAndImport {
+                        Button(action: populateBasesAndImport) {
+                            Text("Continuer".uppercased())
+                                .frame(minWidth: 0, maxWidth: 150, minHeight: 0, maxHeight: 50, alignment: .center)
+                                .foregroundColor(Color.white)
+                                .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
+                                .cornerRadius(5)
+                                .disabled(true)
+                                .padding(.bottom, 10)
+                        }
+                        .simultaneousGesture(TapGesture().onEnded {
+                            self.pwdIsFocused = false
+                        })
+                    }
+                }
                 
-                if !self.showBasesAndImport {
-                    Button(action: populateBasesAndImport) {
-                        Text("Continuer".uppercased())
-                            .frame(minWidth: 0, maxWidth: 150, minHeight: 0, maxHeight: 50, alignment: .center)
+                if self.showBasesAndImport {
+                    VStack(spacing: 0) {
+                        Form {
+                            Picker(selection: $baseIndex, label: Text("Bases")) {
+                                ForEach(0 ..< bases.count) {
+                                    Text(self.bases[$0]).tag($0)
+                                }
+                            }
+                            
+                            Picker(selection: $importIndex, label: Text("Profils d'import")) {
+                                ForEach(0 ..< importProfile.count) {
+                                    Text(self.importProfile[$0]).tag($0)
+                                }
+                            }
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 130, alignment: .center)
+                    }
+                    .colorMultiply(.white)
+                }
+                            
+                Spacer()
+                
+                VStack {
+                    Button(action: addProfile) {
+                        Text(self.addText.uppercased())
+                            .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
                             .foregroundColor(Color.white)
                             .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
                             .cornerRadius(5)
-                            .disabled(true)
+                            .disabled(self.addDisabled)
                             .padding(.bottom, 10)
                     }
                     .simultaneousGesture(TapGesture().onEnded {
                         self.pwdIsFocused = false
                     })
-                }
-            }
-            
-            if self.showBasesAndImport {
-                VStack {
-                    Picker(selection: $baseIndex, label: Text("Bases").foregroundColor(Color.white)) {
-                        ForEach(0 ..< bases.count) {
-                            Text(self.bases[$0]).tag($0)
-                                .foregroundColor(Color.white)
-                        }
-                    }
-                    .frame(minWidth: 0, maxWidth: 620, minHeight: 0, maxHeight: 30)
-                    .padding(.bottom, 100)
-                    .padding(.top, 10)
                     
-                    Picker(selection: $importIndex, label: Text("Profils d'import").foregroundColor(Color.white)) {
-                        ForEach(0 ..< importProfile.count) {
-                            Text(self.importProfile[$0]).tag($0)
-                                .foregroundColor(Color.white)
-                        }
+                    Button(action: cancelProfile) {
+                        Text("Annuler".uppercased())
+                            .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
+                            .foregroundColor(Color.white)
+                            .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
+                            .cornerRadius(5)
                     }
-                    .frame(minWidth: 0, maxWidth: 620, minHeight: 0, maxHeight: 30)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        self.pwdIsFocused = false
+                    })
                 }
-                .colorMultiply(.white)
-            }
-                        
-            Spacer()
-            
-            VStack {
-                Button(action: addProfile) {
-                    Text(self.addText.uppercased())
-                        .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 51 / 255, green: 108 / 255, blue: 202 / 255))
-                        .cornerRadius(5)
-                        .disabled(self.addDisabled)
-                        .padding(.bottom, 10)
-                }
-                .simultaneousGesture(TapGesture().onEnded {
-                    self.pwdIsFocused = false
-                })
                 
-                Button(action: cancelProfile) {
-                    Text("Annuler".uppercased())
-                        .frame(minWidth: 0, maxWidth: 320, minHeight: 0, maxHeight: 50, alignment: .center)
-                        .foregroundColor(Color.white)
-                        .background(Color(red: 11 / 255, green: 138 / 255, blue: 202 / 255))
-                        .cornerRadius(5)
-                }
-                .simultaneousGesture(TapGesture().onEnded {
-                    self.pwdIsFocused = false
-                })
+                Spacer()
             }
-            
-            Spacer()
-        }
-        .background(
-        Image("ajaris_background_alt")
-            .resizable())
-        .font(.system(size: 15))
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text(alertDismiss)))
+            .background(
+            Image("ajaris_background_alt")
+                .resizable())
+            .font(.system(size: 15))
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text(alertDismiss)))
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
     }
     
