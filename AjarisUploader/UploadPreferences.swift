@@ -34,8 +34,24 @@ class UploadPreferences {
         if(contribution.isEmpty()) {
             return
         }
+        var isAlreadyIn = false
         var contributions = UploadPreferences.getPreferences()
-        contributions.append(contribution)
+        if(contributions.count == 0) {
+            contribution.id = 0
+        } else {
+            for i in 0...contributions.count - 1 {
+                if(contributions[i].getId() == contribution.getId()) {
+                    contribution.id = 0
+                    contributions[i] = contribution
+                    isAlreadyIn = true
+                    break
+                }
+                contributions[i].id = contributions[i].id + 1
+            }
+        }
+        if(!isAlreadyIn) {
+            contributions.append(contribution)
+        }
         UploadPreferences.savePreferences(contributions: contributions)
     }
     

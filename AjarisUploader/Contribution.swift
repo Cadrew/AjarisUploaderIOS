@@ -10,6 +10,7 @@ import Foundation
 
 class Contribution: Codable {
     public var id: Int = -1
+    private var realId: Int = -1
     private var uploads: [Upload] = []
     
     init() {
@@ -18,12 +19,13 @@ class Contribution: Codable {
     }
     
     init(id: Int, uploads: [Upload]) {
-        self.id = id
+        self.id = -1
+        self.realId = id
         self.uploads = uploads
     }
     
     public func getId() -> Int {
-        return self.id
+        return self.realId
     }
     
     public func getUploads() -> [Upload] {
