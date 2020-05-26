@@ -245,7 +245,9 @@ struct AddProfileView: View {
                     return
                 }
                 self.lastDocument = XMLProcessing(data: result)!
-                if(self.lastDocument.getBases() != self.bases || self.lastDocument.getImports() != self.importProfile ) {
+                if(self.lastDocument.getBases() != self.bases || self.lastDocument.getImports() != self.importProfile ||
+                    self.bases[self.baseIndex] == XMLProcessing.DefaultField ||
+                    self.importProfile[self.importIndex] == XMLProcessing.DefaultField) {
                     self.bases = self.lastDocument.getBases()
                     self.importProfile = self.lastDocument.getImports()
                     self.showAlertMessage(title: "Paramètres invalides", message: "Veuillez renseigner à nouveau votre base ainsi que votre profil d'import.", dismiss: "OK")
