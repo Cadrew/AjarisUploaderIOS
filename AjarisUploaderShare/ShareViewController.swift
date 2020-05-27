@@ -24,47 +24,44 @@ class ShareViewController: SLComposeServiceViewController {
     override func configurationItems() -> [Any]! {
        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         let item = SLComposeSheetConfigurationItem()!
-       item.title = "Test";
-       item.value = "Value";
-       item.tapHandler = self.show;
-    return [item]
+        item.title = "Test"
+        item.value = "Value"
+        item.tapHandler = self.show
+        return [item]
     }
 
     func show() {
-           print("TEST");
+        print("TEST")
     }
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, Document_numbasedoc: String){
-    // Fonction test fonctionnelle
+        // Fonction test fonctionnelle
         let url = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
         
         let params = [
             "jsessionid": "E626D1160AC82031E6715474733937E3",
             "ptoken": "1Na7H2M6kDoUAU5EnoJK9lva34AhZHvCdd75iDHqn9CahMcVK1SRCRXclstGJQWIXG5mAo5Ivl4o1z9esut3lslW8XBDKpMrQu5fIzlAw2iHtI",
             "ajaupmo": "test",
-            "ContributionComment":"TestIOS",
-            "Document_numbasedoc":"6 - Generique",
-            "contribution":"true"]
+            "ContributionComment": "TestIOS",
+            "Document_numbasedoc": "6",
+            "contribution": "true"
+        ]
     
-   AF.upload(multipartFormData: { MultipartFormData in
-
-     MultipartFormData.append(imgData, withName: "filetoupload" , fileName: "image.jpeg" , mimeType: "image/jpeg")
+        AF.upload(multipartFormData: { MultipartFormData in
+            MultipartFormData.append(imgData, withName: "filetoupload" , fileName: "image.jpeg" , mimeType: "image/jpeg")
             for(key,value) in params {
                 MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
         }, to: url, method: .post, headers: ["Cookie": "JSESSIONID=E626D1160AC82031E6715474733937E3"])
-   .response { (response) in
+        .response { (response) in
             debugPrint(response)
-   }.uploadProgress { progress in
-        print("Upload Progress: \(progress.fractionCompleted)")
+        }.uploadProgress { progress in
+            print("Upload Progress: \(progress.fractionCompleted)")
+        }
     }
-        	
-}
     
 
-   override func didSelectPost() {
-
-    
+    override func didSelectPost() {
         print("In Did Post")
             if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem{
                 print("Item \(item)")
@@ -72,15 +69,15 @@ class ShareViewController: SLComposeServiceViewController {
                     print("item.attachments!======&gt;&gt;&gt; \(ele as! NSItemProvider)")
                     let itemProvider = ele as! NSItemProvider
                     print(itemProvider)
-                    if itemProvider.hasItemConformingToTypeIdentifier("public.jpeg"){
+                    if itemProvider.hasItemConformingToTypeIdentifier("public.jpeg") {
                         imageType = "public.jpeg"
                     }
-                    if itemProvider.hasItemConformingToTypeIdentifier("public.png"){
+                    if itemProvider.hasItemConformingToTypeIdentifier("public.png") {
                          imageType = "public.png"
                     }
                     print("imageType\(imageType)")
                     
-                    if itemProvider.hasItemConformingToTypeIdentifier(imageType){
+                    if itemProvider.hasItemConformingToTypeIdentifier(imageType) {
                         print("True")
                         itemProvider.loadItem(forTypeIdentifier: imageType, options: nil, completionHandler: { (item, error) in
                             
@@ -107,6 +104,6 @@ class ShareViewController: SLComposeServiceViewController {
                 }
                
             }
-//            self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+            //self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         }
-}
+    }
