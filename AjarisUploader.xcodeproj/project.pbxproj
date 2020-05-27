@@ -40,6 +40,7 @@
 		5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F323F43242F74FE00353988 /* ShareViewController.swift */; };
 		5F323F47242F74FE00353988 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F323F45242F74FE00353988 /* MainInterface.storyboard */; };
 		5F323F4B242F74FE00353988 /* AjarisUploaderShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F323F41242F74FE00353988 /* AjarisUploaderShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5FD3261E247EC36F00AFE511 /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */; };
 		98E4BE923E23668E2305BEE8 /* Pods_AjarisUploaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED4F9752D6A72FE3160607D /* Pods_AjarisUploaderTests.framework */; };
 		BE1A42169350BF0BBAB225DB /* Pods_AjarisUploader_AjarisUploaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FE1277C20B6201B1865DD4 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */; };
 		C8838E94703B3D15EAA7B6D9 /* Pods_AjarisUploaderShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDB656A74FD3C87B0D4828D /* Pods_AjarisUploaderShare.framework */; };
@@ -80,6 +81,26 @@
 				5F323F4B242F74FE00353988 /* AjarisUploaderShare.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F907787247BC6BF005B3835 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F90778B247BC6C5005B3835 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -130,6 +151,9 @@
 		5F323F48242F74FE00353988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F323F50242F798F00353988 /* AjarisUploaderShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AjarisUploaderShare.entitlements; sourceTree = "<group>"; };
 		5F323F51242F79A300353988 /* AjarisUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AjarisUploader.entitlements; sourceTree = "<group>"; };
+		5F907784247BC6BF005B3835 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F907788247BC6C5005B3835 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectView.swift; sourceTree = "<group>"; };
 		8C41B5CEBC5D66692426E775 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4A2D7033BD57B71EDE47896 /* Pods-AjarisUploaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		C70B93B96E9388090E487D5A /* Pods-AjarisUploaderShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderShare.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +303,7 @@
 				0739E098247E942800446106 /* UploadPreferences.swift */,
 				0739E09A247E945300446106 /* Contribution.swift */,
 				0739E09C247E946F00446106 /* Upload.swift */,
+				5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */,
 			);
 			path = AjarisUploaderShare;
 			sourceTree = "<group>";
@@ -301,6 +326,8 @@
 		62D254F884493AF63A8DC798 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F907788247BC6C5005B3835 /* Alamofire.framework */,
+				5F907784247BC6BF005B3835 /* Alamofire.framework */,
 				CD505E3683B6464FD1BFBC83 /* Pods_AjarisUploader.framework */,
 				F8FE1277C20B6201B1865DD4 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */,
 				DCDB656A74FD3C87B0D4828D /* Pods_AjarisUploaderShare.framework */,
@@ -322,6 +349,7 @@
 				077A415E242906AD0027B495 /* Resources */,
 				5F323F4C242F74FE00353988 /* Embed App Extensions */,
 				5DB5065149B120688B11C376 /* [CP] Embed Pods Frameworks */,
+				5F907787247BC6BF005B3835 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,6 +408,7 @@
 				5F323F3D242F74FE00353988 /* Sources */,
 				5F323F3E242F74FE00353988 /* Frameworks */,
 				5F323F3F242F74FE00353988 /* Resources */,
+				5F90778B247BC6C5005B3835 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -650,6 +679,7 @@
 				0739E095247E892B00446106 /* Profile.swift in Sources */,
 				0739E099247E942900446106 /* UploadPreferences.swift in Sources */,
 				5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */,
+				5FD3261E247EC36F00AFE511 /* ProfileSelectView.swift in Sources */,
 				0739E08F247E888D00446106 /* ProfilePreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +840,7 @@
 				CODE_SIGN_ENTITLEMENTS = AjarisUploader/AjarisUploader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AjarisUploader/Preview Content\"";
+				DEVELOPMENT_TEAM = V83478Z9NP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AjarisUploader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -833,6 +864,7 @@
 				CODE_SIGN_ENTITLEMENTS = AjarisUploader/AjarisUploader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AjarisUploader/Preview Content\"";
+				DEVELOPMENT_TEAM = V83478Z9NP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AjarisUploader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -936,7 +968,9 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = AjarisUploaderShare/AjarisUploaderShare.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V83478Z9NP;
 				INFOPLIST_FILE = AjarisUploaderShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -945,6 +979,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploader.AjarisUploaderShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -957,7 +992,9 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = AjarisUploaderShare/AjarisUploaderShare.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V83478Z9NP;
 				INFOPLIST_FILE = AjarisUploaderShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -966,6 +1003,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploader.AjarisUploaderShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

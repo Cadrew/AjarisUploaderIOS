@@ -26,8 +26,7 @@ class ShareViewController: SLComposeServiceViewController {
         let item = SLComposeSheetConfigurationItem()!
         item.title = "Test"
         item.value = "Value"
-        item.tapHandler = self.show
-        print("Bonjour")
+        item.tapHandler = self.show	
         return [item]
     }
 
@@ -40,8 +39,8 @@ class ShareViewController: SLComposeServiceViewController {
         let url = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
         
         let params = [
-            "jsessionid": "E626D1160AC82031E6715474733937E3",
-            "ptoken": "1Na7H2M6kDoUAU5EnoJK9lva34AhZHvCdd75iDHqn9CahMcVK1SRCRXclstGJQWIXG5mAo5Ivl4o1z9esut3lslW8XBDKpMrQu5fIzlAw2iHtI",
+            "jsessionid": jsessionid,
+            "ptoken": ptoken,
             "ajaupmo": "test",
             "ContributionComment": "TestIOS",
             "Document_numbasedoc": "6",
@@ -53,7 +52,7 @@ class ShareViewController: SLComposeServiceViewController {
             for(key,value) in params {
                 MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
-        }, to: url, method: .post, headers: ["Cookie": "JSESSIONID=E626D1160AC82031E6715474733937E3"])
+        }, to: url, method: .post, headers: ["Cookie": "JSESSIONID="+jsessionid])
         .response { (response) in
             debugPrint(response)
         }.uploadProgress { progress in
@@ -93,7 +92,7 @@ class ShareViewController: SLComposeServiceViewController {
                                 imgData = img.pngData()
                             }
                             
-                            self.upload(imgData: imgData, jsessionid: "45D732E9BCE79ABFEEC0EC960EE821BC", ptoken: "1Nacm_ncjUSAtQYYCpHAc2S5kWy0zk7koqYvOfEeWnCkuLFzftqXW3QLjQnQFbaknTNHkLqhgAY8j_mS9iwY3umAhQCsLwUCrnNSMzqtmsc6OQ", Document_numbasedoc: "6 - Generique")
+                            self.upload(imgData: imgData, jsessionid: "952E3A3013242D61EDE7FAF1E30CF46E", ptoken: "1Na93x_cQGa0FnyLluBYIUW_Qx6kzOtqFGQa11LKvBM09wCyOwXUXr7ufZ1AlXFQdyXWe5d_Dn6vB-svyOvF-mQGMpIumH5GodwbyrrE2pASP0", Document_numbasedoc: "6 - Generique")
                             
                             print("Item ===\(item)")
                             print("Image Data=====. \(imgData))")
@@ -110,3 +109,4 @@ class ShareViewController: SLComposeServiceViewController {
             //self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         }
     }
+
