@@ -1,5 +1,5 @@
 //
-//  Contribution.swift
+//  File.swift
 //  AjarisUploaderShare
 //
 //  Created by user163559 on 5/27/20.
@@ -49,4 +49,3 @@ class Contribution: Codable {
         return Contribution()
     }
 }
-

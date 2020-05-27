@@ -10,11 +10,12 @@
 		070A0407243B712E001FDCC7 /* ProfileDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0406243B712E001FDCC7 /* ProfileDialog.swift */; };
 		072A2CB2242A880100C0BBF9 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB1242A880100C0BBF9 /* Base.swift */; };
 		072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */; };
-		0739E08F247E888D00446106 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E08E247E888D00446106 /* UserPreferences.swift */; };
-		0739E091247E88EF00446106 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E090247E88EF00446106 /* Contribution.swift */; };
-		0739E093247E890F00446106 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E092247E890F00446106 /* Upload.swift */; };
+		0739E08F247E888D00446106 /* ProfilePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E08E247E888D00446106 /* ProfilePreferences.swift */; };
 		0739E095247E892B00446106 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E094247E892B00446106 /* Profile.swift */; };
 		0739E097247E894500446106 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E096247E894500446106 /* Base.swift */; };
+		0739E099247E942900446106 /* UploadPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E098247E942800446106 /* UploadPreferences.swift */; };
+		0739E09B247E945300446106 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E09A247E945300446106 /* Contribution.swift */; };
+		0739E09D247E946F00446106 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739E09C247E946F00446106 /* Upload.swift */; };
 		077A416A242906AF0027B495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077A4169242906AF0027B495 /* Assets.xcassets */; };
 		077A416D242906AF0027B495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077A416C242906AF0027B495 /* Preview Assets.xcassets */; };
 		077A417B242906AF0027B495 /* AjarisUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A417A242906AF0027B495 /* AjarisUploaderTests.swift */; };
@@ -87,11 +88,12 @@
 		070A0406243B712E001FDCC7 /* ProfileDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDialog.swift; sourceTree = "<group>"; };
 		072A2CB1242A880100C0BBF9 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
-		0739E08E247E888D00446106 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		0739E090247E88EF00446106 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
-		0739E092247E890F00446106 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		0739E08E247E888D00446106 /* ProfilePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreferences.swift; sourceTree = "<group>"; };
 		0739E094247E892B00446106 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0739E096247E894500446106 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		0739E098247E942800446106 /* UploadPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPreferences.swift; sourceTree = "<group>"; };
+		0739E09A247E945300446106 /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		0739E09C247E946F00446106 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		077A4160242906AD0027B495 /* AjarisUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjarisUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		077A4169242906AF0027B495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		077A416C242906AF0027B495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -271,11 +273,12 @@
 				5F323F43242F74FE00353988 /* ShareViewController.swift */,
 				5F323F45242F74FE00353988 /* MainInterface.storyboard */,
 				5F323F48242F74FE00353988 /* Info.plist */,
-				0739E08E247E888D00446106 /* UserPreferences.swift */,
-				0739E090247E88EF00446106 /* Contribution.swift */,
-				0739E092247E890F00446106 /* Upload.swift */,
+				0739E08E247E888D00446106 /* ProfilePreferences.swift */,
 				0739E094247E892B00446106 /* Profile.swift */,
 				0739E096247E894500446106 /* Base.swift */,
+				0739E098247E942800446106 /* UploadPreferences.swift */,
+				0739E09A247E945300446106 /* Contribution.swift */,
+				0739E09C247E946F00446106 /* Upload.swift */,
 			);
 			path = AjarisUploaderShare;
 			sourceTree = "<group>";
@@ -641,12 +644,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0739E09D247E946F00446106 /* Upload.swift in Sources */,
 				0739E097247E894500446106 /* Base.swift in Sources */,
-				0739E093247E890F00446106 /* Upload.swift in Sources */,
+				0739E09B247E945300446106 /* Contribution.swift in Sources */,
 				0739E095247E892B00446106 /* Profile.swift in Sources */,
+				0739E099247E942900446106 /* UploadPreferences.swift in Sources */,
 				5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */,
-				0739E08F247E888D00446106 /* UserPreferences.swift in Sources */,
-				0739E091247E88EF00446106 /* Contribution.swift in Sources */,
+				0739E08F247E888D00446106 /* ProfilePreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
