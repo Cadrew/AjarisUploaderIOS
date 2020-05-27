@@ -54,10 +54,6 @@ struct ProfileView: View {
     
     init() {
         UITableView.appearance().backgroundColor = .clear
-        /*UINavigationBar.appearance().backgroundColor = UIColor(red: 11 / 255, green: 138 / 255, blue: 202 / 255, alpha: 1.0)
-        
-        UINavigationBar.appearance().largeTitleTextAttributes = [
-            .foregroundColor: UIColor.white]*/
     }
     
     private func delete(with indexSet: IndexSet) {

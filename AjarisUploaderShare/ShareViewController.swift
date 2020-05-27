@@ -62,6 +62,8 @@ class ShareViewController: SLComposeServiceViewController {
     
 
     override func didSelectPost() {
+        print("Mes préférences")
+        print(UserPreferences.getPreferences())
         print("In Did Post")
             if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem{
                 print("Item \(item)")

@@ -10,23 +10,22 @@ import Foundation
 
 class ProfilePreferences {
     private static let AjarisPreference: String = "AjarisUploaderKey"
-    private static let defaults = UserDefaults.standard
+    private static let defaults = UserDefaults(suiteName: "com.orkis.ajarisuploader")
     
     public static func getPreferences() -> [Profile] {
-        if let saved = defaults.object(forKey: ProfilePreferences.AjarisPreference) as? Data {
+        if let saved = defaults?.object(forKey: ProfilePreferences.AjarisPreference) as? Data {
             let decoder = JSONDecoder()
             if let loaded = try? decoder.decode(Array<Profile>.self, from: saved) {
                 return loaded
             }
         }
-        return defaults.object(forKey: ProfilePreferences.AjarisPreference) as? [Profile] ?? [Profile]()
+        return defaults?.object(forKey: ProfilePreferences.AjarisPreference) as? [Profile] ?? [Profile]()
     }
     
     public static func savePreferences(profiles: [Profile]) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(profiles) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: ProfilePreferences.AjarisPreference)
+            defaults?.set(encoded, forKey: ProfilePreferences.AjarisPreference)
         }
     }
     
