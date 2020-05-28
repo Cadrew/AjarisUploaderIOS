@@ -15,6 +15,9 @@ class ShareViewController: SLComposeServiceViewController {
     
     var imageType = ""
     var sc_uploadURL = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
+    var item = SLComposeSheetConfigurationItem()!
+    var profiles = ProfilePreferences.getPreferences()
+    var indexProfile = 0
     
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
@@ -23,15 +26,26 @@ class ShareViewController: SLComposeServiceViewController {
     
     override func configurationItems() -> [Any]! {
        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        let item = SLComposeSheetConfigurationItem()!
-        item.title = "Test"
-        item.value = "Value"
-        item.tapHandler = self.show	
-        return [item]
+        self.item.title = "Profile"
+        self.item.value = self.getLastChosenProfileName()
+        self.item.tapHandler = self.show
+        return [self.item]
     }
 
     func show() {
-        print("TEST")
+        self.indexProfile += 1
+        self.item.value = self.profiles[self.indexProfile%profiles.count].getName()
+    }
+    
+    func getLastChosenProfileName() -> String {
+        let upload = UploadPreferences.getPreferences()[0].getUploads()[0]
+        for i in 0...self.profiles.count - 1 {
+            if(upload.getProfile().equal(profile: self.profiles[i])) {
+                self.indexProfile = i
+                break
+            }
+        }
+        return self.profiles[self.indexProfile].getName()
     }
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, Document_numbasedoc: String){
@@ -62,8 +76,6 @@ class ShareViewController: SLComposeServiceViewController {
     
 
     override func didSelectPost() {
-        print("Mes préférences")
-        print(ProfilePreferences.getPreferences())
         print("In Did Post")
             if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem{
                 print("Item \(item)")

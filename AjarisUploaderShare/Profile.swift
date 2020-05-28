@@ -73,4 +73,8 @@ class Profile: Codable {
         let separator = "&profile"
         return String(self.id) + separator + self.name + separator + self.url + separator + self.login + separator + self.pwd + separator + self.base.toString() + separator + self.importProfile
     }
+    
+    public func equal(profile: Profile) -> Bool {
+        return self.id == profile.getId() && self.name == profile.getName() && self.login == profile.getLogin() && self.url == profile.getUrl() && self.pwd == profile.getPwd()
+    }
 }
