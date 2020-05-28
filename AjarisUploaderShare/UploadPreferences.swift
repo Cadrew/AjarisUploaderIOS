@@ -10,7 +10,7 @@ import Foundation
 
 class UploadPreferences {
     private static let AjarisPreference: String = "HistoryAjarisUploaderKey"
-    private static let defaults = UserDefaults(suiteName: "com.orkis.ajarisuploader")
+    private static let defaults = UserDefaults(suiteName: "group.mistale")
     
     public static func getPreferences() -> [Contribution] {
         if let saved = defaults?.object(forKey: UploadPreferences.AjarisPreference) as? Data {
@@ -26,6 +26,7 @@ class UploadPreferences {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(contributions) {
             defaults?.set(encoded, forKey: UploadPreferences.AjarisPreference)
+            defaults?.synchronize()
         }
     }
     

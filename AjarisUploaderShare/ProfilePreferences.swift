@@ -10,7 +10,7 @@ import Foundation
 
 class ProfilePreferences {
     private static let AjarisPreference: String = "AjarisUploaderKey"
-    private static let defaults = UserDefaults(suiteName: "com.orkis.ajarisuploader")
+    private static let defaults = UserDefaults(suiteName: "group.mistale")
     
     public static func getPreferences() -> [Profile] {
         if let saved = defaults?.object(forKey: ProfilePreferences.AjarisPreference) as? Data {
