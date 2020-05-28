@@ -26,7 +26,7 @@ class ShareViewController: SLComposeServiceViewController {
     
     override func configurationItems() -> [Any]! {
        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        self.item.title = "Profile"
+        self.item.title = "Profil"
         self.item.value = self.getLastChosenProfileName()
         self.item.tapHandler = self.show
         return [self.item]
