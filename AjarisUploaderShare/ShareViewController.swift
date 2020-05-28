@@ -14,7 +14,7 @@ import Alamofire
 class ShareViewController: SLComposeServiceViewController {
     
     var imageType = ""
-    var sc_uploadURL = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
+    var sc_uploadURL = ""
     var item = SLComposeSheetConfigurationItem()!
     var profiles = ProfilePreferences.getPreferences()
     var indexProfile = 0
@@ -35,6 +35,7 @@ class ShareViewController: SLComposeServiceViewController {
     func show() {
         self.indexProfile += 1
         self.item.value = self.profiles[self.indexProfile%profiles.count].getName()
+        self.sc_uploadURL = self.profiles[self.indexProfile%profiles.count].getUrl()
     }
     
     func getLastChosenProfileName() -> String {
@@ -45,12 +46,13 @@ class ShareViewController: SLComposeServiceViewController {
                 break
             }
         }
+        self.sc_uploadURL = self.profiles[self.indexProfile].getUrl()
         return self.profiles[self.indexProfile].getName()
     }
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, Document_numbasedoc: String){
         // Fonction test fonctionnelle
-        let url = "https://demo-interne.ajaris.com/Demo/upImportDoc.do"
+        let url = self.sc_uploadURL
         
         let params = [
             "jsessionid": jsessionid,
