@@ -19,11 +19,6 @@ class ShareViewController: SLComposeServiceViewController {
     var profiles = ProfilePreferences.getPreferences()
     var indexProfile = 0
     
-    override func isContentValid() -> Bool {
-        // Do validation of contentText and/or NSExtensionContext attachments here
-        return true
-    }
-    
     override func configurationItems() -> [Any]! {
        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         self.item.title = "Profil"
@@ -57,9 +52,9 @@ class ShareViewController: SLComposeServiceViewController {
         let params = [
             "jsessionid": jsessionid,
             "ptoken": ptoken,
-            "ajaupmo": "test",
-            "ContributionComment": "TestIOS",
-            "Document_numbasedoc": "6",
+            "ajaupmo": "ajaupmo",
+            "ContributionComment": self.contentText!,
+            "Document_numbasedoc": String(self.profiles[self.indexProfile].getBase().getId()),
             "contribution": "true"
         ]
     
