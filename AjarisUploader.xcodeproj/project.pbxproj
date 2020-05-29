@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070A0407243B712E001FDCC7 /* ProfileDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0406243B712E001FDCC7 /* ProfileDialog.swift */; };
 		0725808724811E2800A582CB /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725808624811E2800A582CB /* RequestAPI.swift */; };
+		072580892481544300A582CB /* XMLImportDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072580882481544300A582CB /* XMLImportDoc.swift */; };
 		072A2CB2242A880100C0BBF9 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB1242A880100C0BBF9 /* Base.swift */; };
 		072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */; };
 		0738B3BB2480006C00251B37 /* XMLProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738B3BA2480006C00251B37 /* XMLProcessing.swift */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		070A0406243B712E001FDCC7 /* ProfileDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDialog.swift; sourceTree = "<group>"; };
 		0725808624811E2800A582CB /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
+		072580882481544300A582CB /* XMLImportDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLImportDoc.swift; sourceTree = "<group>"; };
 		072A2CB1242A880100C0BBF9 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
 		0738B3BA2480006C00251B37 /* XMLProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLProcessing.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				0738B3BA2480006C00251B37 /* XMLProcessing.swift */,
 				0725808624811E2800A582CB /* RequestAPI.swift */,
+				072580882481544300A582CB /* XMLImportDoc.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				0739E095247E892B00446106 /* Profile.swift in Sources */,
 				0739E099247E942900446106 /* UploadPreferences.swift in Sources */,
 				5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */,
+				072580892481544300A582CB /* XMLImportDoc.swift in Sources */,
 				5FD3261E247EC36F00AFE511 /* ProfileSelectView.swift in Sources */,
 				0725808724811E2800A582CB /* RequestAPI.swift in Sources */,
 				0739E08F247E888D00446106 /* ProfilePreferences.swift in Sources */,

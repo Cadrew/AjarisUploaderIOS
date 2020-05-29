@@ -12,7 +12,7 @@ import MobileCoreServices
 import Alamofire
 
 class ShareViewController: SLComposeServiceViewController {
-    
+    let UPIMPORTDOC = "/upImportDoc.do"
     var imageType = ""
     var sc_uploadURL = ""
     var item = SLComposeSheetConfigurationItem()!
@@ -20,9 +20,7 @@ class ShareViewController: SLComposeServiceViewController {
     var indexProfile = 0
     var countUploads = 0
     var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
-    let errorLogin = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
-    let errorUpload = UIAlertController(title: "Erreur", message: "Erreur d'envoi", preferredStyle: .alert)
-    let errorFileSize = UIAlertController(title: "Erreur", message: "Fichier trop volumineux", preferredStyle: .alert)
+    let errorDialog = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
     let contribution = Contribution()
     
     override func configurationItems() -> [Any]! {
@@ -40,9 +38,7 @@ class ShareViewController: SLComposeServiceViewController {
             @unknown default:
                 fatalError()
         }})
-        self.errorLogin.addAction(alertAction)
-        self.errorUpload.addAction(alertAction)
-        self.errorFileSize.addAction(alertAction)
+        self.errorDialog.addAction(alertAction)
         
         self.item.title = "Profil"
         self.item.value = self.getLastChosenProfileName()
@@ -69,9 +65,10 @@ class ShareViewController: SLComposeServiceViewController {
     }
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String, numberUploads: Int) {
-        //TODO: Get file name
+        //TODO: Get file name and URI
         let fileName = "image.jpeg"
-        let url = self.sc_uploadURL
+        let url = self.sc_uploadURL + UPIMPORTDOC
+        print("URL: \(url)")
         let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
         
         let params = [
@@ -90,19 +87,17 @@ class ShareViewController: SLComposeServiceViewController {
             }
         }, to: url, method: .post, headers: ["Cookie": "JSESSIONID="+jsessionid])
         .response { (response) in
-            debugPrint(response)
             var hasError = false
-            let result = XMLProcessing(data: response.data ?? Data())!
+            let result = XMLImportDoc(data: response.data ?? Data())!
             
-            //TODO: Handle "code" in upload response and not "error-code"
-            /*if(result.getResults()![0]["error-code"] != "0") {
-                print("Erreur d'envoi")
-                self.present(self.errorUpload, animated: true, completion: nil)
+            if(result.getResults() == nil || result.getResults()![0]["code"] != "0") {
+                self.errorDialog.message = "Erreur d'envoi"
+                self.present(self.errorDialog, animated: true, completion: nil)
                 hasError = true
-            }*/
+            }
             
             if(!hasError) {
-                //self.contribution.setId(id: 0) //TODO: Get contribution id in result
+                self.contribution.setId(id: Int(result.getResults()![0]["contribution-id"]!) ?? 0)
                 let upload = Upload(id: self.countUploads, file: fileName, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
                 self.contribution.addUpload(upload: upload)
             }
@@ -113,7 +108,7 @@ class ShareViewController: SLComposeServiceViewController {
             }
         }.uploadProgress { progress in
             print("Upload Progress: \(progress.fractionCompleted)")
-            //TODO: Display progress bar in notifications (should we create another extension app??)
+            //TODO: Display progress bar in notifications (should we create another extension app??)(warning: Maybe not iOS friendly)
             self.view.addSubview(progressView)
             progressView.setProgress(Float(progress.fractionCompleted), animated: true)
         }
@@ -123,10 +118,10 @@ class ShareViewController: SLComposeServiceViewController {
         print("In Did Post")
         if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem {
             print("Item \(item)")
-            RequestAPI.login(url: self.profiles[self.indexProfile%self.profiles.count].getUrl(), login: self.profiles[self.indexProfile%self.profiles.count].getLogin(), pwd: self.profiles[self.indexProfile].getPwd()) { (result) -> () in
+            RequestAPI.login(url: self.profiles[self.indexProfile%self.profiles.count].getUrl(), login: self.profiles[self.indexProfile%self.profiles.count].getLogin(), pwd: self.profiles[self.indexProfile%self.profiles.count].getPwd()) { (result) -> () in
                 if(result.isEmpty) {
-                    print("Identifiants incorrects")
-                    self.present(self.errorLogin, animated: true, completion: nil)
+                    self.errorDialog.message = "Identifiants incorrects"
+                    self.present(self.errorDialog, animated: true, completion: nil)
                     return
                 }
                 self.lastDocument = XMLProcessing(data: result)!
@@ -160,18 +155,23 @@ class ShareViewController: SLComposeServiceViewController {
                     
                     if imgData.count >= self.lastDocument.getUploadMaxFileSize() {
                         print("Fichier trop volumineux")
-                        //TODO: Display error
+                        //TODO: Display error (now or then?)
                     } else {
                         self.upload(imgData: imgData, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
                     }
                 })
             }
         }
+        //TODO: Run app in background or display a progression in a dialog (I'm not sure we can run app in background, it's not iOS friendly for this use case)
     }
     
     func closeSharing() {
         RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
-            UploadPreferences.addPreferences(contribution: self.contribution)
+            if(!self.contribution.isEmpty()) {
+                print(self.contribution)
+                UploadPreferences.addPreferences(contribution: self.contribution)
+            }
+            self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
         }
     }
 }
