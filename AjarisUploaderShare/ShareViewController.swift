@@ -23,6 +23,7 @@ class ShareViewController: SLComposeServiceViewController {
     let errorLogin = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
     let errorUpload = UIAlertController(title: "Erreur", message: "Erreur d'envoi", preferredStyle: .alert)
     let errorFileSize = UIAlertController(title: "Erreur", message: "Fichier trop volumineux", preferredStyle: .alert)
+    let contribution = Contribution()
     
     override func configurationItems() -> [Any]! {
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -51,8 +52,8 @@ class ShareViewController: SLComposeServiceViewController {
 
     func show() {
         self.indexProfile += 1
-        self.item.value = self.profiles[self.indexProfile%profiles.count].getName()
-        self.sc_uploadURL = self.profiles[self.indexProfile%profiles.count].getUrl()
+        self.item.value = self.profiles[self.indexProfile%self.profiles.count].getName()
+        self.sc_uploadURL = self.profiles[self.indexProfile%self.profiles.count].getUrl()
     }
     
     func getLastChosenProfileName() -> String {
@@ -69,6 +70,7 @@ class ShareViewController: SLComposeServiceViewController {
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String, numberUploads: Int) {
         //TODO: Get file name
+        let fileName = "image.jpeg"
         let url = self.sc_uploadURL
         let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
         
@@ -82,7 +84,7 @@ class ShareViewController: SLComposeServiceViewController {
         ]
     
         AF.upload(multipartFormData: { MultipartFormData in
-            MultipartFormData.append(imgData, withName: "filetoupload" , fileName: "image.jpeg" , mimeType: "image/jpeg")
+            MultipartFormData.append(imgData, withName: "filetoupload" , fileName: fileName , mimeType: "image/jpeg")
             for(key,value) in params {
                 MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
@@ -100,7 +102,9 @@ class ShareViewController: SLComposeServiceViewController {
             }*/
             
             if(!hasError) {
-                //TODO: Populate the contribution with this upload if it succeeded
+                //self.contribution.setId(id: 0) //TODO: Get contribution id in result
+                let upload = Upload(id: self.countUploads, file: fileName, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
+                self.contribution.addUpload(upload: upload)
             }
             
             self.countUploads += 1
@@ -119,7 +123,7 @@ class ShareViewController: SLComposeServiceViewController {
         print("In Did Post")
         if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem {
             print("Item \(item)")
-            RequestAPI.login(url: self.profiles[self.indexProfile].getUrl(), login: self.profiles[self.indexProfile].getLogin(), pwd: self.profiles[self.indexProfile].getPwd()) { (result) -> () in
+            RequestAPI.login(url: self.profiles[self.indexProfile%self.profiles.count].getUrl(), login: self.profiles[self.indexProfile%self.profiles.count].getLogin(), pwd: self.profiles[self.indexProfile].getPwd()) { (result) -> () in
                 if(result.isEmpty) {
                     print("Identifiants incorrects")
                     self.present(self.errorLogin, animated: true, completion: nil)
@@ -167,7 +171,7 @@ class ShareViewController: SLComposeServiceViewController {
     
     func closeSharing() {
         RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
-            //TODO: Save contribution in UserDefault
+            UploadPreferences.addPreferences(contribution: self.contribution)
         }
     }
 }

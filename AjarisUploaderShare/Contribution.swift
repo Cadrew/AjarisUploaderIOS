@@ -28,8 +28,16 @@ class Contribution: Codable {
         return self.realId
     }
     
+    public func setId(id: Int) {
+        self.realId = id
+    }
+    
     public func getUploads() -> [Upload] {
         return self.uploads
+    }
+    
+    public func addUpload(upload: Upload) {
+        self.uploads.append(upload)
     }
     
     public func getNumberOfuploads() -> Int {
