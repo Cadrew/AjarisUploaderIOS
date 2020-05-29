@@ -67,7 +67,9 @@ class ShareViewController: SLComposeServiceViewController {
     }
         
     func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String) {
+        //TODO: Get file name
         let url = self.sc_uploadURL
+        let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
         
         let params = [
             "jsessionid": jsessionid,
@@ -99,7 +101,9 @@ class ShareViewController: SLComposeServiceViewController {
             //TODO: Save uploads in UserDefault
         }.uploadProgress { progress in
             print("Upload Progress: \(progress.fractionCompleted)")
-            //TODO: Display progress bar in notifications
+            //TODO: Display progress bar in notifications (should we create another extension app??)
+            self.view.addSubview(progressView)
+            progressView.setProgress(Float(progress.fractionCompleted), animated: true)
         }
     }
     
@@ -123,7 +127,6 @@ class ShareViewController: SLComposeServiceViewController {
         for ele in item.attachments! {
             print("item.attachments!======&gt;&gt;&gt; \(ele)")
             let itemProvider = ele
-            print(itemProvider)
             if itemProvider.hasItemConformingToTypeIdentifier("public.jpeg") {
                 self.imageType = "public.jpeg"
             }
