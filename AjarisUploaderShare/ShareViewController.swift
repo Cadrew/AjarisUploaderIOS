@@ -18,6 +18,7 @@ class ShareViewController: SLComposeServiceViewController {
     var item = SLComposeSheetConfigurationItem()!
     var profiles = ProfilePreferences.getPreferences()
     var indexProfile = 0
+    var countUploads = 0
     var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
     let errorLogin = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
     let errorUpload = UIAlertController(title: "Erreur", message: "Erreur d'envoi", preferredStyle: .alert)
@@ -66,7 +67,7 @@ class ShareViewController: SLComposeServiceViewController {
         return self.profiles[self.indexProfile].getName()
     }
         
-    func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String) {
+    func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String, numberUploads: Int) {
         //TODO: Get file name
         let url = self.sc_uploadURL
         let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
@@ -88,17 +89,24 @@ class ShareViewController: SLComposeServiceViewController {
         }, to: url, method: .post, headers: ["Cookie": "JSESSIONID="+jsessionid])
         .response { (response) in
             debugPrint(response)
+            var hasError = false
             let result = XMLProcessing(data: response.data ?? Data())!
             
             //TODO: Handle "code" in upload response and not "error-code"
             /*if(result.getResults()![0]["error-code"] != "0") {
                 print("Erreur d'envoi")
                 self.present(self.errorUpload, animated: true, completion: nil)
-                return
+                hasError = true
             }*/
-
-            //TODO: Logout after everything uploaded
-            //TODO: Save uploads in UserDefault
+            
+            if(!hasError) {
+                //TODO: Populate the contribution with this upload if it succeeded
+            }
+            
+            self.countUploads += 1
+            if(self.countUploads == numberUploads) {
+                self.closeSharing()
+            }
         }.uploadProgress { progress in
             print("Upload Progress: \(progress.fractionCompleted)")
             //TODO: Display progress bar in notifications (should we create another extension app??)
@@ -124,6 +132,7 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     func formatUploads(item: NSExtensionItem) {
+        let numberUploads = item.attachments!.count
         for ele in item.attachments! {
             print("item.attachments!======&gt;&gt;&gt; \(ele)")
             let itemProvider = ele
@@ -149,10 +158,16 @@ class ShareViewController: SLComposeServiceViewController {
                         print("Fichier trop volumineux")
                         //TODO: Display error
                     } else {
-                        self.upload(imgData: imgData, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()))
+                        self.upload(imgData: imgData, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
                     }
                 })
             }
+        }
+    }
+    
+    func closeSharing() {
+        RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
+            //TODO: Save contribution in UserDefault
         }
     }
 }
