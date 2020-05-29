@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		070A0407243B712E001FDCC7 /* ProfileDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0406243B712E001FDCC7 /* ProfileDialog.swift */; };
+		0725808724811E2800A582CB /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725808624811E2800A582CB /* RequestAPI.swift */; };
 		072A2CB2242A880100C0BBF9 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB1242A880100C0BBF9 /* Base.swift */; };
 		072A2CB4242A9E1E00C0BBF9 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */; };
 		0738B3BB2480006C00251B37 /* XMLProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738B3BA2480006C00251B37 /* XMLProcessing.swift */; };
@@ -108,6 +109,7 @@
 
 /* Begin PBXFileReference section */
 		070A0406243B712E001FDCC7 /* ProfileDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDialog.swift; sourceTree = "<group>"; };
+		0725808624811E2800A582CB /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		072A2CB1242A880100C0BBF9 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		072A2CB3242A9E1E00C0BBF9 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
 		0738B3BA2480006C00251B37 /* XMLProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLProcessing.swift; sourceTree = "<group>"; };
@@ -203,6 +205,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0725808524811E1300A582CB /* api */ = {
+			isa = PBXGroup;
+			children = (
+				0738B3BA2480006C00251B37 /* XMLProcessing.swift */,
+				0725808624811E2800A582CB /* RequestAPI.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		077A4157242906AD0027B495 = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +306,7 @@
 		5F323F42242F74FE00353988 /* AjarisUploaderShare */ = {
 			isa = PBXGroup;
 			children = (
+				0725808524811E1300A582CB /* api */,
 				5F323F50242F798F00353988 /* AjarisUploaderShare.entitlements */,
 				5F323F43242F74FE00353988 /* ShareViewController.swift */,
 				5F323F45242F74FE00353988 /* MainInterface.storyboard */,
@@ -306,7 +318,6 @@
 				0739E09A247E945300446106 /* Contribution.swift */,
 				0739E09C247E946F00446106 /* Upload.swift */,
 				5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */,
-				0738B3BA2480006C00251B37 /* XMLProcessing.swift */,
 			);
 			path = AjarisUploaderShare;
 			sourceTree = "<group>";
@@ -684,6 +695,7 @@
 				0739E099247E942900446106 /* UploadPreferences.swift in Sources */,
 				5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */,
 				5FD3261E247EC36F00AFE511 /* ProfileSelectView.swift in Sources */,
+				0725808724811E2800A582CB /* RequestAPI.swift in Sources */,
 				0739E08F247E888D00446106 /* ProfilePreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

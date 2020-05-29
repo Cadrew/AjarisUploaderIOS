@@ -1,0 +1,58 @@
+//
+//  RequestAPI.swift
+//  AjarisUploaderShare
+//
+//  Created by user163559 on 5/29/20.
+//  Copyright © 2020 Mistale Software. All rights reserved.
+//
+
+import Foundation
+
+class RequestAPI {
+    public static let UPLOGIN: String = "/upLogin.do"
+    public static let UPLOGOUT: String = "/upLogout.do"
+    public static let SETIMPORTCONFIG: String = "/upSetImportConfig.do"
+    
+    public static func login(url: String, login: String, pwd: String, finished: @escaping (_ result: Data)->()) {
+        let urlRequest = URL(string: url + RequestAPI.UPLOGIN + "?pseudo=" + login + "&password=" + pwd + "&ajaupmo=ajaupmo")!
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                finished(Data())
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                finished(Data())
+                return
+            }
+            
+            finished(data ?? Data())
+        }
+
+        task.resume()
+    }
+    
+    public static func logout(url: String, sessionid: String, finished: @escaping ()->()) {
+        let urlRequest = URL(string: url + RequestAPI.UPLOGOUT + "?jessionid=" + sessionid)!
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                finished()
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                finished()
+                return
+            }
+            
+            finished()
+        }
+
+        task.resume()
+    }
+    
+}

@@ -11,7 +11,7 @@ import Foundation
 class XMLProcessing: NSObject, XMLParserDelegate {
     
     private let recordKey = "result"
-    private let dictionaryKeys = Set<String>(["error-code", "error-message", "imports", "bases", "sessionid", "ptoken"])
+    private let dictionaryKeys = Set<String>(["error-code", "error-message", "imports", "bases", "sessionid", "ptoken", "uploadmaxfilesize"])
 
     private var results: [[String: String]]?
     private var currentDictionary: [String: String]?
@@ -103,8 +103,13 @@ class XMLProcessing: NSObject, XMLParserDelegate {
     }
     
     public func getBasesNum() -> [Int] {
-           return self.basesNum
-       }
+        return self.basesNum
+    }
+    
+    public func getUploadMaxFileSize()-> Int {
+        _ = results![0]["uploadmaxfilesize"] == nil ? " " : results![0]["uploadmaxfilesize"]!.popLast()
+        return Int(self.results![0]["uploadmaxfilesize"]!)! * 1000 * 1000
+    }
     
     private func cleanResult() {
         if(results == nil) {
@@ -117,6 +122,7 @@ class XMLProcessing: NSObject, XMLParserDelegate {
             _ = results![0]["bimportsases"] == nil ? " " : results![0]["imports"]!.popLast()
             _ = results![0]["sessionid"] == nil ? " " : results![0]["sessionid"]!.popLast()
             _ = results![0]["ptoken"] == nil ? " " : results![0]["ptoken"]!.popLast()
+            _ = results![0]["uploadmaxfilesize"] == nil ? " " : results![0]["uploadmaxfilesize"]!.popLast()
         }
         if(results![0]["bases"] != nil) {
             results![0]["bases"] = results![0]["bases"]!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
