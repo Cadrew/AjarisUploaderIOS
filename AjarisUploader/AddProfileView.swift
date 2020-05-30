@@ -177,9 +177,7 @@ struct AddProfileView: View {
                 
                 Spacer()
             }
-            .background(
-            Image("ajaris_background_alt")
-                .resizable())
+            .background(Color(red: 6 / 255, green: 99 / 255, blue: 159 / 255))
             .font(.system(size: 15))
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text(alertDismiss)))
