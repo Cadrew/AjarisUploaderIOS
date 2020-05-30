@@ -53,6 +53,16 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     func getLastChosenProfileName() -> String {
+        if(self.profiles.isEmpty) {
+            self.errorDialog.message = "Vous devez ajouter un profil avant d'envoyer des fichiers."
+            self.present(self.errorDialog, animated: true, completion: nil)
+            self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
+            return ""
+        }
+        if(UploadPreferences.getPreferences().isEmpty) {
+            self.sc_uploadURL = self.profiles[self.indexProfile].getUrl()
+            return self.profiles[self.indexProfile].getName()
+        }
         let upload = UploadPreferences.getPreferences()[0].getUploads()[0]
         for i in 0...self.profiles.count - 1 {
             if(upload.getProfile().equal(profile: self.profiles[i])) {
@@ -64,9 +74,9 @@ class ShareViewController: SLComposeServiceViewController {
         return self.profiles[self.indexProfile].getName()
     }
         
-    func upload(imgData: Data, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String, numberUploads: Int) {
-        //TODO: Get file name and URI
-        let fileName = "image.jpeg"
+    func upload(imgData: Data, itemURI: NSURL, jsessionid: String, ptoken: String, ContributionComment: String, Document_numbasedoc: String, numberUploads: Int) {
+        let fileURI = itemURI.absoluteString!
+        let fileName =  itemURI.lastPathComponent!
         let url = self.sc_uploadURL + UPIMPORTDOC
         print("URL: \(url)")
         let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
@@ -98,7 +108,7 @@ class ShareViewController: SLComposeServiceViewController {
             
             if(!hasError) {
                 self.contribution.setId(id: Int(result.getResults()![0]["contribution-id"]!) ?? 0)
-                let upload = Upload(id: self.countUploads, file: fileName, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
+                let upload = Upload(id: self.countUploads, file: fileURI, fileData: imgData, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
                 self.contribution.addUpload(upload: upload)
             }
             
@@ -145,6 +155,8 @@ class ShareViewController: SLComposeServiceViewController {
             if itemProvider.hasItemConformingToTypeIdentifier(self.imageType) {
                 itemProvider.loadItem(forTypeIdentifier: self.imageType, options: nil, completionHandler: { (item, error) in
                     var imgData: Data!
+                    let itemURI = item as! NSURL
+                    
                     if let url = item as? URL{
                         imgData = try! Data(contentsOf: url)
                     }
@@ -153,11 +165,12 @@ class ShareViewController: SLComposeServiceViewController {
                         imgData = img.pngData()
                     }
                     
+                    print("URI: \(itemURI.relativePath ?? "")")
                     if imgData.count >= self.lastDocument.getUploadMaxFileSize() {
                         print("Fichier trop volumineux")
                         //TODO: Display error (now or then?)
                     } else {
-                        self.upload(imgData: imgData, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
+                        self.upload(imgData: imgData, itemURI: itemURI, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
                     }
                 })
             }

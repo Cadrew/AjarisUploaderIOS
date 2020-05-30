@@ -14,7 +14,7 @@ struct UploadCards: View {
     var body: some View {
         VStack {
             HStack {
-                Image(upload.getFile())
+                Image(uiImage: upload.getUIImage())
                     .resizable()
                     .frame(width: 40, height: 40)
                 
