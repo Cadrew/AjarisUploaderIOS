@@ -52,7 +52,7 @@ class UploadPreferences {
         if(!isAlreadyIn) {
             contributions.append(contribution)
         }
-        UploadPreferences.savePreferences(contributions: contributions)
+        UploadPreferences.savePreferences(contributions: contributions.sorted(by: { $0.id < $1.id }))
     }
     
     public static func removePreference(contribution: Contribution) {
