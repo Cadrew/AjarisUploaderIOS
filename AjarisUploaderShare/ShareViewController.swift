@@ -21,7 +21,8 @@ class ShareViewController: SLComposeServiceViewController {
     var countUploads = 0
     var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
     let errorDialog = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
-    let contribution = Contribution()
+    var contribution = Contribution()
+    var allContributions : [Contribution] = []
     
     override func configurationItems() -> [Any]! {
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -53,17 +54,18 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     func getLastChosenProfileName() -> String {
+        self.allContributions = UploadPreferences.getPreferences()
         if(self.profiles.isEmpty) {
             self.errorDialog.message = "Vous devez ajouter un profil avant d'envoyer des fichiers."
             self.present(self.errorDialog, animated: true, completion: nil)
             self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
             return ""
         }
-        if(UploadPreferences.getPreferences().isEmpty) {
+        if(self.allContributions.isEmpty) {
             self.sc_uploadURL = self.profiles[self.indexProfile].getUrl()
             return self.profiles[self.indexProfile].getName()
         }
-        let upload = UploadPreferences.getPreferences()[0].getUploads()[0]
+        let upload =  self.allContributions[0].getUploads()[0]
         for i in 0...self.profiles.count - 1 {
             if(upload.getProfile().equal(profile: self.profiles[i])) {
                 self.indexProfile = i
@@ -108,7 +110,7 @@ class ShareViewController: SLComposeServiceViewController {
             
             if(!hasError) {
                 self.contribution.setId(id: Int(result.getResults()![0]["contribution-id"]!) ?? 0)
-                let upload = Upload(id: self.countUploads, file: fileURI, fileData: imgData, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
+                let upload = Upload(id: Int(Date().timeIntervalSince1970), file: fileURI, fileData: imgData, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
                 self.contribution.addUpload(upload: upload)
             }
             
@@ -182,7 +184,16 @@ class ShareViewController: SLComposeServiceViewController {
         RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
             if(!self.contribution.isEmpty()) {
                 print(self.contribution)
-                UploadPreferences.addPreferences(contribution: self.contribution)
+                let oldContribution = Contribution.getContributionById(contributions: self.allContributions, id: self.contribution.getId())
+                if(oldContribution.isEmpty()) {
+                    UploadPreferences.addPreferences(contribution: self.contribution)
+                } else {
+                    for upload in self.contribution.getUploads() {
+                        oldContribution.addUpload(upload: upload)
+                    }
+                    print(oldContribution)
+                    UploadPreferences.addPreferences(contribution: oldContribution)
+                }
             }
             self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
         }
