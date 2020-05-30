@@ -52,7 +52,7 @@ class Upload: Codable {
     }
     
     public func getUIImage() -> UIImage {
-        return UIImage(data: self.fileData) ?? UIImage()
+        return UIImage(data: self.fileData) ?? UIImage(named: "icon_ajaris")
     }
     
     public func getComment() -> String {
