@@ -23,6 +23,15 @@ class ShareViewController: SLComposeServiceViewController {
     let errorDialog = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
     var contribution = Contribution()
     var allContributions : [Contribution] = []
+    struct FileToUpload {
+        var imgData: Data
+        var itemURI: NSURL
+        var jsessionid: String
+        var ptoken: String
+        var ContributionComment: String
+        var Document_numbasedoc: String
+        var numberUploads: Int
+    }
     
     override func configurationItems() -> [Any]! {
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -129,7 +138,6 @@ class ShareViewController: SLComposeServiceViewController {
     override func didSelectPost() {
         print("In Did Post")
         if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem {
-            print("Item \(item)")
             RequestAPI.login(url: self.profiles[self.indexProfile%self.profiles.count].getUrl(), login: self.profiles[self.indexProfile%self.profiles.count].getLogin(), pwd: self.profiles[self.indexProfile%self.profiles.count].getPwd()) { (result) -> () in
                 if(result.isEmpty) {
                     self.errorDialog.message = "Identifiants incorrects"
@@ -144,8 +152,9 @@ class ShareViewController: SLComposeServiceViewController {
     
     func formatUploads(item: NSExtensionItem) {
         let numberUploads = item.attachments!.count
+        var filesToUpload = [ Int: FileToUpload ]()
+        var count = 0
         for ele in item.attachments! {
-            print("item.attachments!======&gt;&gt;&gt; \(ele)")
             let itemProvider = ele
             if itemProvider.hasItemConformingToTypeIdentifier("public.jpeg") {
                 self.imageType = "public.jpeg"
@@ -170,9 +179,19 @@ class ShareViewController: SLComposeServiceViewController {
                     print("URI: \(itemURI.relativePath ?? "")")
                     if imgData.count >= self.lastDocument.getUploadMaxFileSize() {
                         print("Fichier trop volumineux")
-                        //TODO: Display error (now or then?)
+                        self.errorDialog.message = "Le fichier \(itemURI.lastPathComponent!) est trop volumineux (> \(String(self.lastDocument.getUploadMaxFileSize()/(1000*1000))) Mo)."
+                        self.present(self.errorDialog, animated: true, completion: nil)
+                        RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
+                            self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
+                        }
                     } else {
-                        self.upload(imgData: imgData, itemURI: itemURI, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
+                        filesToUpload[count] = FileToUpload(imgData: imgData, itemURI: itemURI, jsessionid: self.lastDocument.getResults()![0]["sessionid"]!, ptoken: self.lastDocument.getResults()![0]["ptoken"]!, ContributionComment: self.contentText!, Document_numbasedoc: String(self.profiles[self.indexProfile].getBase().getId()), numberUploads: numberUploads)
+                        count += 1
+                        if(count == numberUploads) {
+                            for i in 0...filesToUpload.count - 1 {
+                                self.upload(imgData: filesToUpload[i]!.imgData, itemURI: filesToUpload[i]!.itemURI, jsessionid: filesToUpload[i]!.jsessionid, ptoken: filesToUpload[i]!.ptoken, ContributionComment: filesToUpload[i]!.ContributionComment, Document_numbasedoc: filesToUpload[i]!.Document_numbasedoc, numberUploads: filesToUpload[i]!.numberUploads)
+                            }
+                        }
                     }
                 })
             }
@@ -183,7 +202,6 @@ class ShareViewController: SLComposeServiceViewController {
     func closeSharing() {
         RequestAPI.logout(url: self.profiles[self.indexProfile].getUrl(), sessionid: self.lastDocument.getResults()![0]["sessionid"]!) { () -> () in
             if(!self.contribution.isEmpty()) {
-                print(self.contribution)
                 let oldContribution = Contribution.getContributionById(contributions: self.allContributions, id: self.contribution.getId())
                 if(oldContribution.isEmpty()) {
                     UploadPreferences.addPreferences(contribution: self.contribution)
@@ -191,7 +209,6 @@ class ShareViewController: SLComposeServiceViewController {
                     for upload in self.contribution.getUploads() {
                         oldContribution.addUpload(upload: upload)
                     }
-                    print(oldContribution)
                     UploadPreferences.addPreferences(contribution: oldContribution)
                 }
             }
