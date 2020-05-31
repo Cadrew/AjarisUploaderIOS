@@ -126,7 +126,7 @@ class ShareViewController: SLComposeServiceViewController {
             
             if(!hasError) {
                 self.contribution.setId(id: Int(result.getResults()![0]["contribution-id"]!) ?? 0)
-                let upload = Upload(id: Int(Date().timeIntervalSince1970), file: fileURI, fileData: imgData, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
+                let upload = Upload(id: Int(Date().timeIntervalSince1970) + self.countUploads * 10000, file: fileURI, fileData: imgData, comment: ContributionComment, profile: self.profiles[self.indexProfile%self.profiles.count], date: Date())
                 self.contribution.addUpload(upload: upload)
             }
             
