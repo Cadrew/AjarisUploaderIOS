@@ -17,21 +17,21 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>NSExtensionActivationRule</key>
 			<dict>
-                <key>NSExtensionActivationSupportsImageWithMaxCount</key>
-                <integer>1000</integer>
-                <key>NSExtensionActivationSupportsMovieWithMaxCount</key>
-                <integer>1000</integer>
-            </dict>
-        </dict>
+				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
+				<integer>1000</integer>
+				<key>NSExtensionActivationSupportsMovieWithMaxCount</key>
+				<integer>1000</integer>
+			</dict>
+		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
 		<key>NSExtensionPointIdentifier</key>
