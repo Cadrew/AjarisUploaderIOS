@@ -108,7 +108,7 @@ class XMLProcessing: NSObject, XMLParserDelegate {
     
     public func getUploadMaxFileSize()-> Int {
         _ = results![0]["uploadmaxfilesize"] == nil ? " " : results![0]["uploadmaxfilesize"]!.popLast()
-        return Int(self.results![0]["uploadmaxfilesize"]!)! * 1000 * 1000
+        return (Int(self.results![0]["uploadmaxfilesize"] ?? "5000") ?? 5000) * 1000 * 1000
     }
     
     private func cleanResult() {

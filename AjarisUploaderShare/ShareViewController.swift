@@ -16,11 +16,14 @@ class ShareViewController: SLComposeServiceViewController {
     var imageType = ""
     var sc_uploadURL = ""
     var item = SLComposeSheetConfigurationItem()!
+    let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
+    var progressValue : Double = 0
+    let indicator = UIActivityIndicatorView.init(style: UIActivityIndicatorView.Style.medium)
     var profiles = ProfilePreferences.getPreferences()
     var indexProfile = 0
     var countUploads = 0
     var lastDocument: XMLProcessing = XMLProcessing(data: Data())!
-    let errorDialog = UIAlertController(title: "Erreur", message: "Identifiants incorrects", preferredStyle: .alert)
+    let errorDialog = UIAlertController(title: "Erreur", message: "", preferredStyle: .alert)
     var contribution = Contribution()
     var allContributions : [Contribution] = []
     struct FileToUpload {
@@ -49,6 +52,11 @@ class ShareViewController: SLComposeServiceViewController {
                 fatalError()
         }})
         self.errorDialog.addAction(alertAction)
+        self.progressView.center = self.view.center
+        self.view.addSubview(self.progressView)
+        self.indicator.frame = CGRect(x: 0.0, y: 0.0, width: 70.0, height: 70.0)
+        self.indicator.center = CGPoint(x: self.view.frame.size.width  / 2, y: self.view.frame.size.height / 2 - 20)
+        self.view.addSubview(self.indicator)
         
         self.item.title = "Profil"
         self.item.value = self.getLastChosenProfileName()
@@ -90,7 +98,6 @@ class ShareViewController: SLComposeServiceViewController {
         let fileName =  itemURI.lastPathComponent!
         let url = self.sc_uploadURL + UPIMPORTDOC
         print("URL: \(url)")
-        let progressView = UIProgressView.init(progressViewStyle: UIProgressView.Style.default)
         
         let params = [
             "jsessionid": jsessionid,
@@ -129,10 +136,17 @@ class ShareViewController: SLComposeServiceViewController {
             }
         }.uploadProgress { progress in
             print("Upload Progress: \(progress.fractionCompleted)")
-            //TODO: Display progress bar in notifications (should we create another extension app??)(warning: Maybe not iOS friendly)
-            self.view.addSubview(progressView)
-            progressView.setProgress(Float(progress.fractionCompleted), animated: true)
+            self.progressValue += progress.fractionCompleted
+            self.updateProgressBar(numberUploads: numberUploads)
+            self.indicator.bringSubviewToFront(self.view)
+            if !self.indicator.isAnimating {
+                self.indicator.startAnimating()
+            }
         }
+    }
+    
+    func updateProgressBar(numberUploads: Int) {
+        self.progressView.setProgress(Float(self.progressValue / Double(numberUploads)), animated: true)
     }
     
     override func didSelectPost() {
@@ -196,7 +210,6 @@ class ShareViewController: SLComposeServiceViewController {
                 })
             }
         }
-        //TODO: Run app in background or display a progression in a dialog (I'm not sure we can run app in background, it's not iOS friendly for this use case)
     }
     
     func closeSharing() {
