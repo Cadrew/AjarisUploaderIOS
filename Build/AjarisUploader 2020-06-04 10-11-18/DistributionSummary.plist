@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AjarisUploader.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>E3BF856A75195A540DAE36FCEFB63BAF4E608C5F</string>
+				<key>dateExpires</key>
+				<string>5/31/21</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>E3BF856A75195A540DAE36FCEFB63BAF4E608C5F</string>
+						<key>dateExpires</key>
+						<string>5/31/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Alamofire.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>V83478Z9NP</string>
+						<key>name</key>
+						<string>Alexandre DO-O ALMEIDA</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>E3BF856A75195A540DAE36FCEFB63BAF4E608C5F</string>
+						<key>dateExpires</key>
+						<string>5/31/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>entitlements</key>
+					<dict>
+						<key>application-identifier</key>
+						<string>V83478Z9NP.com.mistale.AjarisUploader.AjarisUploaderShare</string>
+						<key>com.apple.developer.team-identifier</key>
+						<string>V83478Z9NP</string>
+						<key>com.apple.security.application-groups</key>
+						<array>
+							<string>group.mistale</string>
+						</array>
+						<key>get-task-allow</key>
+						<false/>
+					</dict>
+					<key>name</key>
+					<string>AjarisUploaderShare.appex</string>
+					<key>profile</key>
+					<dict>
+						<key>UUID</key>
+						<string>8e9b49ba-d5c8-44d3-bf89-53838ee13bed</string>
+						<key>name</key>
+						<string>iOS Team Ad Hoc Provisioning Profile: com.mistale.AjarisUploader.AjarisUploaderShare</string>
+					</dict>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>V83478Z9NP</string>
+						<key>name</key>
+						<string>Alexandre DO-O ALMEIDA</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>V83478Z9NP.com.mistale.AjarisUploader</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>V83478Z9NP</string>
+				<key>com.apple.security.application-groups</key>
+				<array>
+					<string>group.mistale</string>
+				</array>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>AjarisUploader.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>67ff0610-8a4b-4f9c-a1e3-bda31459b504</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.mistale.AjarisUploader</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>V83478Z9NP</string>
+				<key>name</key>
+				<string>Alexandre DO-O ALMEIDA</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
