@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon_ajaris.png",
+      "filename" : "A_40x40.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "A_80x80.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "A_120x120.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
