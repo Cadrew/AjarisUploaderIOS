@@ -10,7 +10,7 @@ import Foundation
 
 class UploadPreferences {
     private static let AjarisPreference: String = "HistoryAjarisUploaderKey"
-    private static let defaults = UserDefaults(suiteName: "group.mistale")
+    private static let defaults = UserDefaults(suiteName: "group.orkis")
     
     public static func getPreferences() -> [Contribution] {
         if let saved = defaults?.object(forKey: UploadPreferences.AjarisPreference) as? Data {

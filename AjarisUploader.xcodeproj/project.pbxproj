@@ -40,14 +40,14 @@
 		07A068FD243A50B1009F6B3A /* ContributionCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A068FC243A50B1009F6B3A /* ContributionCards.swift */; };
 		07C29BBE243B0C2F0098447E /* HistoryDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C29BBD243B0C2F0098447E /* HistoryDialog.swift */; };
 		07C29BC0243B11970098447E /* UploadCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C29BBF243B11970098447E /* UploadCards.swift */; };
+		45856C8AE9D2F1F8C375A5D8 /* Pods_AjarisUploader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9977A13C1A499ED103304CE6 /* Pods_AjarisUploader.framework */; };
 		5F323F44242F74FE00353988 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F323F43242F74FE00353988 /* ShareViewController.swift */; };
 		5F323F47242F74FE00353988 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F323F45242F74FE00353988 /* MainInterface.storyboard */; };
 		5F323F4B242F74FE00353988 /* AjarisUploaderShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F323F41242F74FE00353988 /* AjarisUploaderShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5FD3261E247EC36F00AFE511 /* ProfileSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */; };
-		98E4BE923E23668E2305BEE8 /* Pods_AjarisUploaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED4F9752D6A72FE3160607D /* Pods_AjarisUploaderTests.framework */; };
-		BE1A42169350BF0BBAB225DB /* Pods_AjarisUploader_AjarisUploaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FE1277C20B6201B1865DD4 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */; };
-		C8838E94703B3D15EAA7B6D9 /* Pods_AjarisUploaderShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDB656A74FD3C87B0D4828D /* Pods_AjarisUploaderShare.framework */; };
-		FE50255BD7EC3806BF311691 /* Pods_AjarisUploader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD505E3683B6464FD1BFBC83 /* Pods_AjarisUploader.framework */; };
+		7C6105DCF00AE4708FC45D2D /* Pods_AjarisUploaderShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2106CCFB71F54EAC7F582B /* Pods_AjarisUploaderShare.framework */; };
+		9420642DB7B81F301BD80F8D /* Pods_AjarisUploader_AjarisUploaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF6550C0D266752B563177D /* Pods_AjarisUploader_AjarisUploaderUITests.framework */; };
+		D327CF95314E03CCC4B43303 /* Pods_AjarisUploaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D98539B1B5878300C3E23 /* Pods_AjarisUploaderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,9 +148,10 @@
 		07A068FC243A50B1009F6B3A /* ContributionCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionCards.swift; sourceTree = "<group>"; };
 		07C29BBD243B0C2F0098447E /* HistoryDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDialog.swift; sourceTree = "<group>"; };
 		07C29BBF243B11970098447E /* UploadCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCards.swift; sourceTree = "<group>"; };
-		12EDEB0BCD3630FE5CD08523 /* Pods-AjarisUploaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3ED4F9752D6A72FE3160607D /* Pods_AjarisUploaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		503A5C00EB2E6B8AAF5D932F /* Pods-AjarisUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.release.xcconfig"; sourceTree = "<group>"; };
+		2A76C17F081E9B8DCCD8DE59 /* Pods-AjarisUploaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		417A5910DF1E40D52BE9BC28 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B05A6D940A3B435C65F671F /* Pods-AjarisUploaderShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderShare.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.release.xcconfig"; sourceTree = "<group>"; };
+		578D98539B1B5878300C3E23 /* Pods_AjarisUploaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F323F41242F74FE00353988 /* AjarisUploaderShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AjarisUploaderShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F323F43242F74FE00353988 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5F323F46242F74FE00353988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -160,15 +161,14 @@
 		5F907784247BC6BF005B3835 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F907788247BC6C5005B3835 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD3261D247EC36F00AFE511 /* ProfileSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectView.swift; sourceTree = "<group>"; };
-		8C41B5CEBC5D66692426E775 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C4A2D7033BD57B71EDE47896 /* Pods-AjarisUploaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.release.xcconfig"; sourceTree = "<group>"; };
-		C70B93B96E9388090E487D5A /* Pods-AjarisUploaderShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderShare.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.debug.xcconfig"; sourceTree = "<group>"; };
-		CA659D084973B5ABC0569365 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CD505E3683B6464FD1BFBC83 /* Pods_AjarisUploader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9C42D906824E018B9BADD2C /* Pods-AjarisUploaderShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderShare.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.release.xcconfig"; sourceTree = "<group>"; };
-		DCDB656A74FD3C87B0D4828D /* Pods_AjarisUploaderShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploaderShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8FE1277C20B6201B1865DD4 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploader_AjarisUploaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD62416B45068231D3E534EA /* Pods-AjarisUploader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.debug.xcconfig"; sourceTree = "<group>"; };
+		9977A13C1A499ED103304CE6 /* Pods_AjarisUploader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF6550C0D266752B563177D /* Pods_AjarisUploader_AjarisUploaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploader_AjarisUploaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2106CCFB71F54EAC7F582B /* Pods_AjarisUploaderShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AjarisUploaderShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF881AD0346EB128ED7A2A6E /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C61CF69E88E6A6E17761BDBF /* Pods-AjarisUploader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.debug.xcconfig"; sourceTree = "<group>"; };
+		D985F0F0F7EE93F43BE2336C /* Pods-AjarisUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploader.release.xcconfig"; path = "Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader.release.xcconfig"; sourceTree = "<group>"; };
+		DFED7A1F55DC59E8A8A6455D /* Pods-AjarisUploaderShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderShare.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderShare/Pods-AjarisUploaderShare.debug.xcconfig"; sourceTree = "<group>"; };
+		E054D5B4937C5F7F95741FD5 /* Pods-AjarisUploaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AjarisUploaderTests.debug.xcconfig"; path = "Target Support Files/Pods-AjarisUploaderTests/Pods-AjarisUploaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE50255BD7EC3806BF311691 /* Pods_AjarisUploader.framework in Frameworks */,
+				45856C8AE9D2F1F8C375A5D8 /* Pods_AjarisUploader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98E4BE923E23668E2305BEE8 /* Pods_AjarisUploaderTests.framework in Frameworks */,
+				D327CF95314E03CCC4B43303 /* Pods_AjarisUploaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1A42169350BF0BBAB225DB /* Pods_AjarisUploader_AjarisUploaderUITests.framework in Frameworks */,
+				9420642DB7B81F301BD80F8D /* Pods_AjarisUploader_AjarisUploaderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8838E94703B3D15EAA7B6D9 /* Pods_AjarisUploaderShare.framework in Frameworks */,
+				7C6105DCF00AE4708FC45D2D /* Pods_AjarisUploaderShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,14 +328,14 @@
 		614003B5880884466FBD2358 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FD62416B45068231D3E534EA /* Pods-AjarisUploader.debug.xcconfig */,
-				503A5C00EB2E6B8AAF5D932F /* Pods-AjarisUploader.release.xcconfig */,
-				8C41B5CEBC5D66692426E775 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */,
-				CA659D084973B5ABC0569365 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */,
-				C70B93B96E9388090E487D5A /* Pods-AjarisUploaderShare.debug.xcconfig */,
-				D9C42D906824E018B9BADD2C /* Pods-AjarisUploaderShare.release.xcconfig */,
-				12EDEB0BCD3630FE5CD08523 /* Pods-AjarisUploaderTests.debug.xcconfig */,
-				C4A2D7033BD57B71EDE47896 /* Pods-AjarisUploaderTests.release.xcconfig */,
+				C61CF69E88E6A6E17761BDBF /* Pods-AjarisUploader.debug.xcconfig */,
+				D985F0F0F7EE93F43BE2336C /* Pods-AjarisUploader.release.xcconfig */,
+				417A5910DF1E40D52BE9BC28 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */,
+				AF881AD0346EB128ED7A2A6E /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */,
+				DFED7A1F55DC59E8A8A6455D /* Pods-AjarisUploaderShare.debug.xcconfig */,
+				4B05A6D940A3B435C65F671F /* Pods-AjarisUploaderShare.release.xcconfig */,
+				E054D5B4937C5F7F95741FD5 /* Pods-AjarisUploaderTests.debug.xcconfig */,
+				2A76C17F081E9B8DCCD8DE59 /* Pods-AjarisUploaderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -345,10 +345,10 @@
 			children = (
 				5F907788247BC6C5005B3835 /* Alamofire.framework */,
 				5F907784247BC6BF005B3835 /* Alamofire.framework */,
-				CD505E3683B6464FD1BFBC83 /* Pods_AjarisUploader.framework */,
-				F8FE1277C20B6201B1865DD4 /* Pods_AjarisUploader_AjarisUploaderUITests.framework */,
-				DCDB656A74FD3C87B0D4828D /* Pods_AjarisUploaderShare.framework */,
-				3ED4F9752D6A72FE3160607D /* Pods_AjarisUploaderTests.framework */,
+				9977A13C1A499ED103304CE6 /* Pods_AjarisUploader.framework */,
+				AEF6550C0D266752B563177D /* Pods_AjarisUploader_AjarisUploaderUITests.framework */,
+				AF2106CCFB71F54EAC7F582B /* Pods_AjarisUploaderShare.framework */,
+				578D98539B1B5878300C3E23 /* Pods_AjarisUploaderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,13 +360,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077A418A242906AF0027B495 /* Build configuration list for PBXNativeTarget "AjarisUploader" */;
 			buildPhases = (
-				721F112A8885ADEE418AE2D7 /* [CP] Check Pods Manifest.lock */,
+				02F84105DDB872243B148548 /* [CP] Check Pods Manifest.lock */,
 				077A415C242906AD0027B495 /* Sources */,
 				077A415D242906AD0027B495 /* Frameworks */,
 				077A415E242906AD0027B495 /* Resources */,
 				5F323F4C242F74FE00353988 /* Embed App Extensions */,
-				5DB5065149B120688B11C376 /* [CP] Embed Pods Frameworks */,
 				5F907787247BC6BF005B3835 /* Embed Frameworks */,
+				23FC9AC300BBA55BB0A2C3CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,7 +382,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077A418D242906AF0027B495 /* Build configuration list for PBXNativeTarget "AjarisUploaderTests" */;
 			buildPhases = (
-				9C616D68ABE0190121FA4708 /* [CP] Check Pods Manifest.lock */,
+				628D30B4F22D10902B5AA842 /* [CP] Check Pods Manifest.lock */,
 				077A4172242906AF0027B495 /* Sources */,
 				077A4173242906AF0027B495 /* Frameworks */,
 				077A4174242906AF0027B495 /* Resources */,
@@ -401,11 +401,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077A4190242906AF0027B495 /* Build configuration list for PBXNativeTarget "AjarisUploaderUITests" */;
 			buildPhases = (
-				99D7CDAFB502FFE3A2D95C17 /* [CP] Check Pods Manifest.lock */,
+				049C7B233CBDAF25D0CB66F4 /* [CP] Check Pods Manifest.lock */,
 				077A417D242906AF0027B495 /* Sources */,
 				077A417E242906AF0027B495 /* Frameworks */,
 				077A417F242906AF0027B495 /* Resources */,
-				522EA93FC5D26E760D51C84C /* [CP] Embed Pods Frameworks */,
+				3AE65E8870A88C2AD69F3D05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,7 +421,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F323F4F242F74FE00353988 /* Build configuration list for PBXNativeTarget "AjarisUploaderShare" */;
 			buildPhases = (
-				105273453E07BD2D3882AB1F /* [CP] Check Pods Manifest.lock */,
+				EFA7128BDABE43DC9E6E0376 /* [CP] Check Pods Manifest.lock */,
 				5F323F3D242F74FE00353988 /* Sources */,
 				5F323F3E242F74FE00353988 /* Frameworks */,
 				5F323F3F242F74FE00353988 /* Resources */,
@@ -518,63 +518,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		105273453E07BD2D3882AB1F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AjarisUploaderShare-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		522EA93FC5D26E760D51C84C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5DB5065149B120688B11C376 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		721F112A8885ADEE418AE2D7 /* [CP] Check Pods Manifest.lock */ = {
+		02F84105DDB872243B148548 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,7 +540,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99D7CDAFB502FFE3A2D95C17 /* [CP] Check Pods Manifest.lock */ = {
+		049C7B233CBDAF25D0CB66F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,7 +562,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C616D68ABE0190121FA4708 /* [CP] Check Pods Manifest.lock */ = {
+		23FC9AC300BBA55BB0A2C3CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader/Pods-AjarisUploader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE65E8870A88C2AD69F3D05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AjarisUploader-AjarisUploaderUITests/Pods-AjarisUploader-AjarisUploaderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		628D30B4F22D10902B5AA842 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -634,6 +612,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AjarisUploaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFA7128BDABE43DC9E6E0376 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AjarisUploaderShare-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -852,7 +852,7 @@
 		};
 		077A418B242906AF0027B495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD62416B45068231D3E534EA /* Pods-AjarisUploader.debug.xcconfig */;
+			baseConfigurationReference = C61CF69E88E6A6E17761BDBF /* Pods-AjarisUploader.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = $inherited;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -878,7 +878,7 @@
 		};
 		077A418C242906AF0027B495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 503A5C00EB2E6B8AAF5D932F /* Pods-AjarisUploader.release.xcconfig */;
+			baseConfigurationReference = D985F0F0F7EE93F43BE2336C /* Pods-AjarisUploader.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = $inherited;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -904,7 +904,7 @@
 		};
 		077A418E242906AF0027B495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12EDEB0BCD3630FE5CD08523 /* Pods-AjarisUploaderTests.debug.xcconfig */;
+			baseConfigurationReference = E054D5B4937C5F7F95741FD5 /* Pods-AjarisUploaderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -916,7 +916,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploaderTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -926,7 +926,7 @@
 		};
 		077A418F242906AF0027B495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4A2D7033BD57B71EDE47896 /* Pods-AjarisUploaderTests.release.xcconfig */;
+			baseConfigurationReference = 2A76C17F081E9B8DCCD8DE59 /* Pods-AjarisUploaderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -938,7 +938,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploaderTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -948,17 +948,19 @@
 		};
 		077A4191242906AF0027B495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C41B5CEBC5D66692426E775 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */;
+			baseConfigurationReference = 417A5910DF1E40D52BE9BC28 /* Pods-AjarisUploader-AjarisUploaderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D2C454FE5;
 				INFOPLIST_FILE = AjarisUploaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploaderUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -968,17 +970,19 @@
 		};
 		077A4192242906AF0027B495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA659D084973B5ABC0569365 /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */;
+			baseConfigurationReference = AF881AD0346EB128ED7A2A6E /* Pods-AjarisUploader-AjarisUploaderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D2C454FE5;
 				INFOPLIST_FILE = AjarisUploaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploaderUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -988,21 +992,22 @@
 		};
 		5F323F4D242F74FE00353988 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C70B93B96E9388090E487D5A /* Pods-AjarisUploaderShare.debug.xcconfig */;
+			baseConfigurationReference = DFED7A1F55DC59E8A8A6455D /* Pods-AjarisUploaderShare.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = AjarisUploaderShare/AjarisUploaderShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V83478Z9NP;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 4D2C454FE5;
 				INFOPLIST_FILE = AjarisUploaderShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploader.AjarisUploaderShare;
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploader.AjarisUploaderShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1013,21 +1018,22 @@
 		};
 		5F323F4E242F74FE00353988 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9C42D906824E018B9BADD2C /* Pods-AjarisUploaderShare.release.xcconfig */;
+			baseConfigurationReference = 4B05A6D940A3B435C65F671F /* Pods-AjarisUploaderShare.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = AjarisUploaderShare/AjarisUploaderShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V83478Z9NP;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 4D2C454FE5;
 				INFOPLIST_FILE = AjarisUploaderShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mistale.AjarisUploader.AjarisUploaderShare;
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orkis.AjarisUploader.AjarisUploaderShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
