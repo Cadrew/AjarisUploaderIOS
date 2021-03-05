@@ -55,16 +55,16 @@ struct AddProfileView: View {
                     }
                     .font(.system(size: 20))
                 }
-                .padding(10)
+                .padding(5)
                 
-                Spacer()
+                //Spacer()
                 
                 Image("logo_uploader_alt")
                     .resizable()
                     .frame(width: 120, height: 33)
                     .padding()
                 
-                Spacer()
+               // Spacer()
                 
                 VStack {
                     TextField("URL", text: $url, onEditingChanged: {_ in
@@ -299,10 +299,11 @@ struct AddProfileView: View {
         }
         RequestAPI.login(url: self.url, login: self.login, pwd: self.pwd) { (result) -> () in
             if(result.isEmpty) {
-                self.showAlertMessage(title: "Identifiants incorrects", message: "Veuillez renseigner de nouveaux identifiants.", dismiss: "OK")
+                self.showAlertMessage(title: "Connexion refusée", message: "Veuillez vérifier vos informations de connexion", dismiss: "OK")
                 return
             }
             self.lastDocument = XMLProcessing(data: result)!
+            //let erreur = self.lastDocument.getResults()![0]["error-code"]
             if(self.lastDocument.getResults()![0]["error-code"] == "0") {
                 self.bases = self.lastDocument.getBases()
                 self.basesNum = self.lastDocument.getBasesNum()
@@ -312,7 +313,7 @@ struct AddProfileView: View {
                 self.pwdDisabled = true
                 self.showBasesAndImport = true
             } else {
-                self.showAlertMessage(title: "Identifiants incorrects", message: "Veuillez renseigner de nouveaux identifiants.", dismiss: "OK")
+                self.showAlertMessage(title: "Identifiants incorrects", message: "Veuillez vérifier vos identifiants", dismiss: "OK")
                 self.addDisabled = true
                 self.loginDisabled = false
                 self.pwdDisabled = false

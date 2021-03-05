@@ -17,17 +17,24 @@ struct AboutView: View {
             Spacer()
             
             HStack(spacing: 0) {
-                Text("Ajaris UpLoader version ")
-                    .font(.system(size: 20))
+                Text("Ajaris UpLoader v")
+                    .font(.system(size: 25))
+                    .fontWeight(.black)
+                    
                 
-                Text((self.version ?? "1") as String + ".")
-                    .font(.system(size: 20))
+                Text((self.version ?? "1") as String)
+                    .font(.system(size: 25))
+                    .fontWeight(.black)
             }
             .padding(.bottom, 10)
             
             HStack(spacing: 0) {
-                Text("Ajaris est un produit ")
+                Text("Ajaris est un produit")
                     .font(.system(size: 20))
+                
+            }
+            
+            HStack(spacing: 0) {
                 
                 Button("https://www.orkis.com") {
                     if let url = URL(string: "https://www.orkis.com") {
@@ -36,8 +43,6 @@ struct AboutView: View {
                 }
                 .font(.system(size: 20))
                 
-                Text(".")
-                    .font(.system(size: 20))
             }
             
             Spacer()
